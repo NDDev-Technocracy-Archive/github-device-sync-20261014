@@ -15,9 +15,9 @@ repository:
 
 provider:
   type: "github"
-  installation: "installation:github-opennetwork"
+  installation: "installation:github-nddev-technocracy-sandbox"
   repository_id: 1335994527
-  owner: "NDDev-OpenNetwork"
+  owner: "NDDev-Technocracy-Sandbox"
   name: "github-device-sync"
 
 classification:
