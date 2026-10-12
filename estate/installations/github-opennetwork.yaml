@@ -5,10 +5,10 @@ schema_version: 1
 # exists, and so an installation with no managed repositories is represented --
 # observe-only is the honest default for an account you only read.
 installation:
-  id: "installation:github-opennetwork"
+  id: "installation:github-nddev-technocracy-opennetwork"
   provider: "github"
   account_type: "organization"
-  account_login: "NDDev-OpenNetwork"
+  account_login: "NDDev-Technocracy-OpenNetwork"
   app_installation_id_source: "secure-runtime"
 
 management:

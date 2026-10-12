@@ -2,8 +2,8 @@ schema_version: 1
 
 owner:
   id: "owner:opennetwork"
-  installation: "installation:github-opennetwork"
-  provider_login: "NDDev-OpenNetwork"
+  installation: "installation:github-nddev-technocracy-opennetwork"
+  provider_login: "NDDev-Technocracy-OpenNetwork"
 
 defaults:
   policy_profile: "organization-default"

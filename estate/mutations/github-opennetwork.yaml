@@ -6,7 +6,7 @@ schema_version: 1
 # "at least one".
 mutation:
   id: "mutation:github-opennetwork"
-  installation: "installation:github-opennetwork"
+  installation: "installation:github-nddev-technocracy-opennetwork"
   provider: "github"
 
 scope:
