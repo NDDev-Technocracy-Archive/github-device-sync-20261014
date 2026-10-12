@@ -6,9 +6,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/canonicaljson"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/materialize"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/canonicaljson"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/materialize"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
 )
 
 const MaterializeVerificationAction = "materialize-source-verification"

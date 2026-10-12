@@ -12,15 +12,15 @@ import (
 	"slices"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitops"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/harness"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/harnessevidence"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/trust"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitops"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/harness"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/harnessevidence"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/trust"
 )
 
 // ModuleReleaseEvidence is the signed private QA proof bound into an immutable

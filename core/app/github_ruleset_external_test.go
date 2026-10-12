@@ -6,7 +6,7 @@ import (
 	"slices"
 	"testing"
 
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
 )
 
 // GDS owns the required-status-check rule wholesale, so the desired state it

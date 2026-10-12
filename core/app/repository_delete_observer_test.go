@@ -3,7 +3,7 @@ package app
 import (
 	"testing"
 
-	repositoryworkflow "github.com/NDDev-OpenNetwork/github-device-sync/core/repository"
+	repositoryworkflow "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/repository"
 )
 
 // The delete precondition observer is built twice — once when the plan is

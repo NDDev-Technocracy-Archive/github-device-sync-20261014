@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
 )
 
 // SagaNode is the executable counterpart of an observational Subplan. Nodes

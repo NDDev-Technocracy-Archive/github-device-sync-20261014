@@ -8,11 +8,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/harness"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/identity"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/harness"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/identity"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
 )
 
 const harnessPlanLifetime = 15 * time.Minute

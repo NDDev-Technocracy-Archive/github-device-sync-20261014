@@ -1,7 +1,7 @@
 package githubruntime
 
 import (
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
 	"path/filepath"
 	"strings"
 	"testing"

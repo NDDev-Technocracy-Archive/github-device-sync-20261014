@@ -18,8 +18,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/agent-runtime/goal"
-	"github.com/NDDev-OpenNetwork/agent-runtime/observability"
+	"github.com/NDDev-Technocracy-Sandbox/agent-runtime/goal"
+	"github.com/NDDev-Technocracy-Sandbox/agent-runtime/observability"
 )
 
 const (

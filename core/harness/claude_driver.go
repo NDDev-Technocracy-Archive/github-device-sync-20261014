@@ -11,7 +11,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 const claudeJudgePolicy = "GDS runtime judge v1 (claude-code): evaluate only supplied subject output, tool events, deterministic state evidence, and exact rubrics; never execute tools or infer missing evidence."

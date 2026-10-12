@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
 )
 
 func TestScanRejectsPortablePathsAndHighConfidenceSecrets(t *testing.T) {

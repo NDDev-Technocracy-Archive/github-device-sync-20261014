@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/bundle"
-	rolloutdomain "github.com/NDDev-OpenNetwork/github-device-sync/core/rollout"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/bundle"
+	rolloutdomain "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/rollout"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func TestAcceptedBundleLedgerPreservesAntiRollbackFloor(t *testing.T) {

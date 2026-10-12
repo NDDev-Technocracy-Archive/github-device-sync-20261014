@@ -5,10 +5,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/canonicaljson"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
-	repositoryworkflow "github.com/NDDev-OpenNetwork/github-device-sync/core/repository"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/canonicaljson"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
+	repositoryworkflow "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/repository"
 )
 
 // RetirementReader is the provider surface a retirement decision needs.

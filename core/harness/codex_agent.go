@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"path/filepath"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 // codexAgent implements RuntimeAgent for the Codex CLI. It carries the two

@@ -5,11 +5,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/discovery"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/manifest"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/workspace"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/discovery"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/manifest"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/workspace"
 )
 
 type WorkspaceAuditOptions struct {

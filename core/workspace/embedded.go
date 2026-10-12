@@ -3,7 +3,7 @@ package workspace
 import (
 	"sort"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
 )
 
 // EmbeddedConsumer names one repository that consumes another repository as a

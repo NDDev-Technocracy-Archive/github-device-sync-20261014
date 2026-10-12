@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
 )
 
 type InstallationReader interface {

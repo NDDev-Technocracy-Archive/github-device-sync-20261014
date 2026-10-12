@@ -450,7 +450,7 @@ phase_1() {
     local candidate
     candidate=$(mktemp "${GDS_BIN_TARGET}.tmp.XXXXXX")
     if ! (cd "$SOURCE_ROOT" && go build -trimpath \
-      -ldflags "-X github.com/NDDev-OpenNetwork/github-device-sync/core/cli.Version=${expected_version}" \
+      -ldflags "-X github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/cli.Version=${expected_version}" \
       -o "$candidate" ./core/cmd/gds); then
       rm -f -- "$candidate"
       die "gds source build failed"

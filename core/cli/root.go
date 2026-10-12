@@ -13,10 +13,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/app"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/capabilities"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/harness"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/app"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/capabilities"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/harness"
 )
 
 // Version is the development default; a release build overrides it with the

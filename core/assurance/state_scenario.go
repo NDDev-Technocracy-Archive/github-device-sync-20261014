@@ -9,11 +9,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/controller"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/reconciler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/controller"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/reconciler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 type durableStateResult struct {

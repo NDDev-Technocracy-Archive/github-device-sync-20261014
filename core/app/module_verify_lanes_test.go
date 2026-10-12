@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	moduleworkflow "github.com/NDDev-OpenNetwork/github-device-sync/core/module"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
+	moduleworkflow "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/module"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
 )
 
 func TestCleanupPendingStopsLaterLanesInSource(t *testing.T) {

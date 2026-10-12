@@ -5,9 +5,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitcontracts"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitcontracts"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
 )
 
 type Inspector struct {

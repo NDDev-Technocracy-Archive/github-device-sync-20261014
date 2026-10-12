@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/reconciler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/reconciler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 type auditKeyStore []byte

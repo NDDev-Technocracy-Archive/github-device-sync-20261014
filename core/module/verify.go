@@ -3,7 +3,7 @@ package module
 import (
 	"fmt"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
 )
 
 // A module's `verification.commands` is how it tells this control plane which

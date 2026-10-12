@@ -3,7 +3,7 @@ package workspace
 import (
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
 )
 
 func consumerAnchor(id string, target string, gitmodulesName string) domain.RepositoryAnchor {

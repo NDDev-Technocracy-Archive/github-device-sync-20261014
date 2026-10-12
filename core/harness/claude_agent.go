@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"path/filepath"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 // claudeAgent implements RuntimeAgent for the Claude Code CLI. It carries the

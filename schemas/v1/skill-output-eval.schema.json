@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NDDev-OpenNetwork/github-device-sync/schemas/v1/skill-output-eval.schema.json",
+  "$id": "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync/schemas/v1/skill-output-eval.schema.json",
   "title": "GDS skill output evaluation corpus v1",
   "type": "object",
   "additionalProperties": false,

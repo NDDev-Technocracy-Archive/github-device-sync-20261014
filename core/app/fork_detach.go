@@ -5,14 +5,14 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/anchor"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	forkworkflow "github.com/NDDev-OpenNetwork/github-device-sync/core/fork"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitcontracts"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/identity"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/anchor"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	forkworkflow "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/fork"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitcontracts"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/identity"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 type ForkDetachOptions struct {

@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/manifest"
-	moduleworkflow "github.com/NDDev-OpenNetwork/github-device-sync/core/module"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/redaction"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/manifest"
+	moduleworkflow "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/module"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/redaction"
 )
 
 // ModuleVerifyOptions bounds an execution, because this is the one GDS surface

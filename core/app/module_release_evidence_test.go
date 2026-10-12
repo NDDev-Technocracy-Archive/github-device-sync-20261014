@@ -13,10 +13,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/canonicaljson"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/harnessevidence"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/trust"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/canonicaljson"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/harnessevidence"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/trust"
 )
 
 // evidenceFixture writes a signed harness evidence record plus the trust policy

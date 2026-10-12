@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitauthority"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitauthority"
 )
 
 var spdxIDCharacters = regexp.MustCompile(`[^A-Za-z0-9.-]+`)
@@ -89,7 +89,7 @@ func buildSBOM(
 	document := spdxDocument{
 		SPDXVersion: "SPDX-2.3", DataLicense: "CC0-1.0", SPDXID: "SPDXRef-DOCUMENT",
 		Name: "gds-" + version + "-sbom",
-		DocumentNamespace: "https://github.com/NDDev-OpenNetwork/github-device-sync/spdx/" +
+		DocumentNamespace: "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync/spdx/" +
 			version + "/" + source.Commit,
 		CreationInfo: spdxCreationInfo{
 			Created: source.Timestamp.UTC().Format(time.RFC3339),
@@ -99,7 +99,7 @@ func buildSBOM(
 			},
 		},
 		Packages: []spdxPackage{{
-			Name: "github.com/NDDev-OpenNetwork/github-device-sync", SPDXID: mainID,
+			Name: "github.com/NDDev-Technocracy-Sandbox/github-device-sync", SPDXID: mainID,
 			VersionInfo: version, DownloadLocation: "NOASSERTION", FilesAnalyzed: false,
 			LicenseConcluded: "NOASSERTION", LicenseDeclared: "NOASSERTION",
 			CopyrightText: "NOASSERTION",
@@ -108,10 +108,10 @@ func buildSBOM(
 			Element: "SPDXRef-DOCUMENT", Type: "DESCRIBES", Related: mainID,
 		}},
 	}
-	seenPackages := map[string]struct{}{"github.com/NDDev-OpenNetwork/github-device-sync@" + version: {}}
+	seenPackages := map[string]struct{}{"github.com/NDDev-Technocracy-Sandbox/github-device-sync@" + version: {}}
 	for _, module := range modules {
 		moduleVersion := module.Version
-		if module.Path == "github.com/NDDev-OpenNetwork/github-device-sync" {
+		if module.Path == "github.com/NDDev-Technocracy-Sandbox/github-device-sync" {
 			continue
 		}
 		key := module.Path + "@" + moduleVersion

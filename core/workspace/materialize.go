@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/anchor"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/anchor"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
 )
 
 const MaterializeCheckoutAction = "materialize-workspace-checkout"

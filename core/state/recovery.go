@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/canonicaljson"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/canonicaljson"
 )
 
 type RecoveryStepEvidence struct {

@@ -12,9 +12,9 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
-	gdsschemas "github.com/NDDev-OpenNetwork/github-device-sync/schemas"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
+	gdsschemas "github.com/NDDev-Technocracy-Sandbox/github-device-sync/schemas"
 )
 
 func TestEmbeddedSchemasCompile(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
 )
 
 type ContentInput struct {

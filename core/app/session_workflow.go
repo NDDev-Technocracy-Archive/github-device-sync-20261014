@@ -8,11 +8,11 @@ import (
 	"sort"
 	"strings"
 
-	contextresolver "github.com/NDDev-OpenNetwork/github-device-sync/core/context"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	contextresolver "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/context"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 const maxSessionBoundaries = 64

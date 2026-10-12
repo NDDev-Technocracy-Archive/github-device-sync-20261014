@@ -21,12 +21,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/identity"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/reconciler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/secrets"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/identity"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/reconciler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/secrets"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 const maxSnapshotBytes = int64(serialization.MaxInputBytes)

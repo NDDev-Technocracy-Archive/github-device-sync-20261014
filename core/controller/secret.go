@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/secrets"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/secrets"
 )
 
 type WebhookSecretSource struct {

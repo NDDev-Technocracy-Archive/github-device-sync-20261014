@@ -3,8 +3,8 @@ package module
 import (
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
 )
 
 func moduleAnchor() domain.RepositoryAnchor {

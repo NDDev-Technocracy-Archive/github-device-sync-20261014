@@ -8,9 +8,9 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/manifest"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/manifest"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func TestDiscoverFindsNestedGitBoundaries(t *testing.T) {

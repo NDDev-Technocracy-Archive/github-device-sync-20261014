@@ -5,7 +5,7 @@ package releasebuilder
 import (
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/bundle"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/bundle"
 )
 
 const ExpectedGoVersion = "go1.27.1"

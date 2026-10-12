@@ -9,16 +9,16 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/canonicaljson"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/compiler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitops"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/identity"
-	moduleworkflow "github.com/NDDev-OpenNetwork/github-device-sync/core/module"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/canonicaljson"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/compiler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitops"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/identity"
+	moduleworkflow "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/module"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 type ModulePinOptions struct {

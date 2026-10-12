@@ -3,9 +3,9 @@ package githubcoverage
 import (
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/reconciler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/reconciler"
 )
 
 func TestEvaluateMigratesByImmutableProviderIDAcrossRename(t *testing.T) {

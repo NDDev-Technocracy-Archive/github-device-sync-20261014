@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 const codexJudgePolicy = "GDS runtime judge v1: evaluate only supplied subject output, tool events, deterministic state evidence, and exact rubrics; never execute tools or infer missing evidence."

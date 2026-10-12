@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/canonicaljson"
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/canonicaljson"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
 )
 
 // AdoptionPlan is observation-only evidence. It does not authorize update or

@@ -216,7 +216,7 @@ Versioning.
 ## [0.1.1] - 2026-08-16
 
 First release of `github-device-sync` (GDS) as an open-source control plane
-under `github.com/NDDev-OpenNetwork/github-device-sync`. The version line starts
+under `github.com/NDDev-Technocracy-Sandbox/github-device-sync`. The version line starts
 here: this is a new module path, so the numbering of the predecessor it grew out
 of does not carry over and would only resolve to releases no tag here can name.
 

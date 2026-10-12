@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 func TestLoadKillSwitchesIsStrictAndFailsClosed(t *testing.T) {

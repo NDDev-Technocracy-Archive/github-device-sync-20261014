@@ -12,14 +12,14 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/anchor"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/compiler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estateregistry"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/manifest"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/anchor"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/compiler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estateregistry"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/manifest"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func TestResolvePublicEngineLocallyWithoutClaimingEstateAuthority(t *testing.T) {

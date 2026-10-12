@@ -12,15 +12,15 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/audit"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/controller"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/controllerruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/reconciler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/telemetry"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/webhooks"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/audit"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/controller"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/controllerruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/reconciler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/telemetry"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/webhooks"
 )
 
 // version is the development default; the release builder stamps the exact

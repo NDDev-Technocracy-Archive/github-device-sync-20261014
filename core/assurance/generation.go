@@ -8,16 +8,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/bundle"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/canonicaljson"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/compiler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/module"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/portfolio"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/rollout"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/bundle"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/canonicaljson"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/compiler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/module"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/portfolio"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/rollout"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 // harnessSourceTreeDigest gives the scale harness a deterministic bundle

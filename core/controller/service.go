@@ -14,7 +14,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 // errShutdownTimeout signals that the controller's background loops did not

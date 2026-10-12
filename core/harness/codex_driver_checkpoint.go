@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
 )
 
 var runtimeDriverPathToken = regexp.MustCompile(`[^a-zA-Z0-9._-]+`)

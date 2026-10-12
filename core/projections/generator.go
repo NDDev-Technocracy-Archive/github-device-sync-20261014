@@ -13,11 +13,11 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/compiler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
-	gdtemplates "github.com/NDDev-OpenNetwork/github-device-sync/templates"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/compiler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
+	gdtemplates "github.com/NDDev-Technocracy-Sandbox/github-device-sync/templates"
 )
 
 const (

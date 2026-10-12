@@ -11,8 +11,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/identity"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/trust"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/identity"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/trust"
 )
 
 // LoadPrivateKey reads one bounded, non-symlinked PKCS#8 Ed25519 PEM key.

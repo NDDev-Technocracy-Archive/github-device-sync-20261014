@@ -11,8 +11,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
 )
 
 const maxSecurityScanFileBytes = 4 << 20

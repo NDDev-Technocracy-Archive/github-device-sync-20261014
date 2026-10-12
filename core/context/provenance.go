@@ -3,9 +3,9 @@ package contextresolver
 import (
 	"context"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/compiler"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/compiler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
 )
 
 // CanonicalPolicyProver independently reconstructs development projections

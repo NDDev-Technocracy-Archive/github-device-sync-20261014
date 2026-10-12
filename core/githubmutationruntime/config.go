@@ -5,7 +5,7 @@ package githubmutationruntime
 import (
 	"fmt"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
 )
 
 type ErrorKind string

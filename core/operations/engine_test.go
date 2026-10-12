@@ -14,11 +14,11 @@ import (
 	"testing"
 	"time"
 
-	approvalcontract "github.com/NDDev-OpenNetwork/github-device-sync/core/approval"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/trust"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	approvalcontract "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/approval"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/trust"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 type fakeChecker struct {

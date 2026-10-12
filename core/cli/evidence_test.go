@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/sessionevidence"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/sessionevidence"
 )
 
 func writeSessionKeyPair(t *testing.T) (string, string) {

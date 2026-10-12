@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"sort"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/privateconfig"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/privateconfig"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 // ConfigFileName is the canonical device-local runtime configuration filename.

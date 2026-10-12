@@ -13,7 +13,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/assurance"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/assurance"
 )
 
 type paths []string

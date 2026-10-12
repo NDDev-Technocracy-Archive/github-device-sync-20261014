@@ -9,7 +9,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func TestCodexDriverInputDigestBindsCanonicalInputs(t *testing.T) {

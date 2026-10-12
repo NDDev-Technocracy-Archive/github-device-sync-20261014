@@ -8,8 +8,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
 )
 
 const MaterializeRecoveryRefAction = "materialize-recovery-ref"

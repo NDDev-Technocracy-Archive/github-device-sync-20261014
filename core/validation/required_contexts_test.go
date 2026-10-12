@@ -7,7 +7,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
 )
 
 // Derived from the tracked files rather than from a fixture, so adding a

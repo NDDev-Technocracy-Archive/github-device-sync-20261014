@@ -4,9 +4,9 @@ import (
 	"context"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/bundle"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/releaseconsumer"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/bundle"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/releaseconsumer"
 )
 
 type ReleaseScopeOptions struct {

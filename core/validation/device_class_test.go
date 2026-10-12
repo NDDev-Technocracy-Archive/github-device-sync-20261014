@@ -3,8 +3,8 @@ package validation
 import (
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
 )
 
 // deviceClassFixture returns a minimal valid device document as decoded YAML,

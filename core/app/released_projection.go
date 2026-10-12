@@ -6,10 +6,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/bundle"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/bundle"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
 )
 
 const maximumProjectionBundleBytes = 256 << 20

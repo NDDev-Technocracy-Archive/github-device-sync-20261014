@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
 )
 
 func indexedAnchor(id string, providerID int64, owner string, name string) domain.RepositoryAnchor {

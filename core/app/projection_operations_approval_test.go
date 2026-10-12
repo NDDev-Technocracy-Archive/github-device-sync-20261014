@@ -3,8 +3,8 @@ package app
 import (
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
 )
 
 // TestProjectionWriteNeedsNoSignatureButProviderWritesStillDo pins the boundary

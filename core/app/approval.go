@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	approvalcontract "github.com/NDDev-OpenNetwork/github-device-sync/core/approval"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	approvalcontract "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/approval"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 type ApprovalIssueOptions struct {

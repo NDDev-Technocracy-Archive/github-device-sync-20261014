@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
 )
 
 // A module's anchor says which commands prove it. Nothing said which checks its

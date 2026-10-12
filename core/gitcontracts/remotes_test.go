@@ -3,7 +3,7 @@ package gitcontracts
 import (
 	"testing"
 
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
 )
 
 func TestExactRemoteURLRequiresOneSharedCredentialFreeURL(t *testing.T) {

@@ -21,14 +21,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubmutationruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitops"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubmutationruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitops"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func TestModuleReleaseChecksBindTrustedActionsSuccessToExactCommit(t *testing.T) {
