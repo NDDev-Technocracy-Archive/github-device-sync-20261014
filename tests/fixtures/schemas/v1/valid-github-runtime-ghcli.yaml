@@ -14,7 +14,7 @@ github:
     "installation:github-guild":
       account_login: "example-guild"
       account_type: "organization"
-    "installation:github-opennetwork":
+    "installation:github-nddev-technocracy-opennetwork":
       account_login: "NDDev-OpenNetwork"
       account_type: "organization"
   max_repositories: 2000
