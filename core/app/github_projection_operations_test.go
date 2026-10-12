@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubchange"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubchange"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 func TestGitHubProjectionPlanBindsExactCandidateAndMissingRuntimeBlocksMutation(t *testing.T) {
@@ -110,7 +110,7 @@ func appProjectionOperationServer(t *testing.T) *httptest.Server {
   "archived": false,
   "disabled": false,
   "default_branch": "main",
-  "html_url": "https://github.com/NDDev-OpenNetwork/github-device-sync",
+  "html_url": "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync",
   "owner": {"login": "NDDev-OpenNetwork"}
 }`))
 		case request.URL.Path == "/repos/NDDev-OpenNetwork/github-device-sync/git/ref/heads/main":

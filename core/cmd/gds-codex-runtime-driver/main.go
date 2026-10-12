@@ -10,9 +10,9 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/harness"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/harness"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 const maximumRequestBytes = 1 << 20

@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/privateconfig"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/privateconfig"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func Load(path string, desired estate.Config, schemas *validation.Set) (Config, error) {

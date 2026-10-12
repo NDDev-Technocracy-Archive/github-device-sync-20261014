@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitauthority"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/redaction"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitauthority"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/redaction"
 )
 
 const recoveryRefPrefix = "refs/gds/recovery/"

@@ -16,7 +16,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 const DefaultMaxPayloadBytes = int64(10 << 20)

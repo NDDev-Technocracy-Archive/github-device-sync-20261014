@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/estate"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitops"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/repository"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/estate"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitops"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/repository"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 func TestRepositoryTransferIsFailClosedWithoutUserTokenAdapter(t *testing.T) {
@@ -40,7 +40,7 @@ func TestRepositoryRenamePlanBindsProviderRemoteAndRejectsInsecureMutationRuntim
 	}
 	remote := exec.Command(
 		"git", "remote", "set-url", "origin",
-		"https://github.com/NDDev-OpenNetwork/github-device-sync.git",
+		"https://github.com/NDDev-Technocracy-Sandbox/github-device-sync.git",
 	)
 	remote.Dir = root
 	if output, err := remote.CombinedOutput(); err != nil {
@@ -123,8 +123,8 @@ func TestRepositoryRenamePlanBindsProviderRemoteAndRejectsInsecureMutationRuntim
 	}
 	_, remoteName, expectedURL, targetURL, err := gitops.RemoteUpdateStep(data.Plan.Steps[1])
 	if err != nil || remoteName != "origin" ||
-		expectedURL != "https://github.com/NDDev-OpenNetwork/github-device-sync.git" ||
-		targetURL != "https://github.com/NDDev-OpenNetwork/github-device-sync-renamed.git" {
+		expectedURL != "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync.git" ||
+		targetURL != "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync-renamed.git" {
 		t.Fatalf("remote step expected=%q target=%q remote=%q err=%v", expectedURL, targetURL, remoteName, err)
 	}
 	applied := services.ApplyRepositoryTransition(

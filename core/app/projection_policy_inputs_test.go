@@ -3,7 +3,7 @@ package app
 import (
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
 )
 
 func TestPublicModuleSelfProjectionDoesNotInheritRegisteredEstateSource(t *testing.T) {

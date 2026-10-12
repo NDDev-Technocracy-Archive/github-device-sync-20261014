@@ -7,8 +7,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/operations"
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/operations"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
 )
 
 type RemediationScope struct {

@@ -18,9 +18,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubcoverage"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubcoverage"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
 )
 
 func TestGitHubInventoryAndReconciliationUseLiveReadOnlyRuntime(t *testing.T) {

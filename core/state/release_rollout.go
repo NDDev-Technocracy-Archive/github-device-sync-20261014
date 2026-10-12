@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/bundle"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/rollout"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/semver"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/bundle"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/rollout"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/semver"
 )
 
 type AcceptedBundle struct {

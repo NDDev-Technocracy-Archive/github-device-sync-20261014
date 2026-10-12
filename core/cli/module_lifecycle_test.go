@@ -15,11 +15,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/anchor"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/app"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/serialization"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/anchor"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/app"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/serialization"
 )
 
 func TestModuleAddMaterializesExactTypedRelationship(t *testing.T) {

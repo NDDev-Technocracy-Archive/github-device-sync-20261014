@@ -1,9 +1,9 @@
-module github.com/NDDev-OpenNetwork/github-device-sync
+module github.com/NDDev-Technocracy-Sandbox/github-device-sync
 
 go 1.27.1
 
 require (
-	github.com/NDDev-OpenNetwork/agent-runtime v0.1.7
+	github.com/NDDev-Technocracy-Sandbox/agent-runtime v0.1.9-0.20261012185520-46cfc13f3ca0
 	github.com/dlclark/regexp2 v1.12.0
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.3
 	github.com/spf13/cobra v1.10.2

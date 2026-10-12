@@ -5,7 +5,7 @@
   "author": {
     "name": "example-user"
   },
-  "repository": "https://github.com/NDDev-OpenNetwork/github-device-sync",
+  "repository": "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync",
   "license": "Proprietary",
   "skills": "./skills/",
   "interface": {

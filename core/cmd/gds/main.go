@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/cli"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/cli"
 )
 
 func main() {

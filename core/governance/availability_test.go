@@ -2,7 +2,7 @@ package governance
 
 import (
 	"context"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/compiler"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/compiler"
 	"testing"
 )
 

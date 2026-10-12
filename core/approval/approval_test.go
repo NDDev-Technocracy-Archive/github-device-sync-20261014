@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/trust"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/trust"
 )
 
 func TestApprovalRejectsEveryExactBindingMutation(t *testing.T) {

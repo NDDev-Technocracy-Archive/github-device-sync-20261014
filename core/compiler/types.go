@@ -5,7 +5,7 @@ package compiler
 import (
 	"encoding/json"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
 )
 
 // DevelopmentBundleVersion stamps bundles compiled from policy sources on a

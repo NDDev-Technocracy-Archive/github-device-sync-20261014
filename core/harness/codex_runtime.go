@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/redaction"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/redaction"
 )
 
 const (

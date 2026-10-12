@@ -9,7 +9,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 var backupNamePattern = regexp.MustCompile(`^state-[0-9]{8}T[0-9]{6}Z\.db$`)

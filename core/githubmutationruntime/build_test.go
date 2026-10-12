@@ -14,8 +14,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
 )
 
 func TestBuildMutatorsUsesSeparateExactWriteApp(t *testing.T) {

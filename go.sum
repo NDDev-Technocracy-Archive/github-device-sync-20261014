@@ -1,5 +1,5 @@
-github.com/NDDev-OpenNetwork/agent-runtime v0.1.7 h1:MayC0xT0adNMrpE5L8BZgQ4RtMfIfpT447Lb38ehzqM=
-github.com/NDDev-OpenNetwork/agent-runtime v0.1.7/go.mod h1:3uAlDqXz9SlMlBV8seJZvBsEu7OWW4ATXdr9fJuPyUQ=
+github.com/NDDev-Technocracy-Sandbox/agent-runtime v0.1.9-0.20261012185520-46cfc13f3ca0 h1:SFwhNoEk/4EXi5glLpHu56bwyaJ55WXgxxKc3+XW5M8=
+github.com/NDDev-Technocracy-Sandbox/agent-runtime v0.1.9-0.20261012185520-46cfc13f3ca0/go.mod h1:DT83rUfGAlxYYYMUH2175WwbZu5nmQX+7QEX4BRXW78=
 github.com/cpuguy83/go-md2man/v2 v2.0.6/go.mod h1:oOW0eioCTA6cOiMLiUPZOpcVxMig6NIQQ7OS05n1F4g=
 github.com/dlclark/regexp2 v1.12.0 h1:0j4c5qQmnC6XOWNjP3PIXURXN2gWx76rd3KvgdPkCz8=
 github.com/dlclark/regexp2 v1.12.0/go.mod h1:DHkYz0B9wPfa6wondMfaivmHpzrQ3v9q8cnmRbL6yW8=

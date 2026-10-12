@@ -3,7 +3,7 @@ package harness
 import (
 	"sort"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
 )
 
 // Sync reconciles the harness set a device declares with the projections that

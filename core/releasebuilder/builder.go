@@ -16,12 +16,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/bundle"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitauthority"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/semver"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/skills"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/bundle"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitauthority"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/semver"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/skills"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 const maxCommandOutput = 8 << 20
@@ -319,9 +319,9 @@ func buildBinaries(
 		expectedPath string
 		ldflags      string
 	}{
-		"gds":                      {name: "gds", pkg: "./core/cmd/gds", expectedPath: "github.com/NDDev-OpenNetwork/github-device-sync/core/cmd/gds", ldflags: "-s -w -buildid= -X github.com/NDDev-OpenNetwork/github-device-sync/core/cli.Version=" + version},
-		"gds-controller":           {name: "gds-controller", pkg: "./core/cmd/gds-controller", expectedPath: "github.com/NDDev-OpenNetwork/github-device-sync/core/cmd/gds-controller", ldflags: "-s -w -buildid= -X main.version=" + version},
-		"gds-codex-runtime-driver": {name: "gds-codex-runtime-driver", pkg: "./core/cmd/gds-codex-runtime-driver", expectedPath: "github.com/NDDev-OpenNetwork/github-device-sync/core/cmd/gds-codex-runtime-driver", ldflags: "-s -w -buildid="},
+		"gds":                      {name: "gds", pkg: "./core/cmd/gds", expectedPath: "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/cmd/gds", ldflags: "-s -w -buildid= -X github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/cli.Version=" + version},
+		"gds-controller":           {name: "gds-controller", pkg: "./core/cmd/gds-controller", expectedPath: "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/cmd/gds-controller", ldflags: "-s -w -buildid= -X main.version=" + version},
+		"gds-codex-runtime-driver": {name: "gds-codex-runtime-driver", pkg: "./core/cmd/gds-codex-runtime-driver", expectedPath: "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/cmd/gds-codex-runtime-driver", ldflags: "-s -w -buildid="},
 	}
 	commands := make([]struct {
 		name         string
@@ -386,7 +386,7 @@ func validateBuiltGoBinary(content []byte, expectedPath string, target Target, f
 		return errors.New("Go build information is unavailable")
 	}
 	if info.GoVersion != ExpectedGoVersion || info.Path != expectedPath ||
-		info.Main.Path != "github.com/NDDev-OpenNetwork/github-device-sync" {
+		info.Main.Path != "github.com/NDDev-Technocracy-Sandbox/github-device-sync" {
 		return errors.New("Go build identity does not match the release contract")
 	}
 	settings := map[string]string{}

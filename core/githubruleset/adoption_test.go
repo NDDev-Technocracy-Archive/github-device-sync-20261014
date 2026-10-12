@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
 )
 
 func TestRulesetAdoptionIsObservationOnlyAndRequiresFullState(t *testing.T) {

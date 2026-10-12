@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 var secretValue = regexp.MustCompile(`(?i)(gh[pousr]_[a-z0-9]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|password\s*=|bearer\s+[a-z0-9._-]+)`)

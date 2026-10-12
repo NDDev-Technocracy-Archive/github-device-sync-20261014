@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Quarantined pre-GDS parity fixture; active device intent uses schemas/v1/device.schema.json.",
-  "$id": "https://github.com/NDDev-OpenNetwork/github-device-sync/schemas/device-snapshot.schema.json",
+  "$id": "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync/schemas/device-snapshot.schema.json",
   "title": "github-device-sync device snapshot",
   "type": "object",
   "additionalProperties": false,

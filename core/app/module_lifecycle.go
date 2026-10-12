@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/anchor"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	moduleworkflow "github.com/NDDev-OpenNetwork/github-device-sync/core/module"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/anchor"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	moduleworkflow "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/module"
 )
 
 type ModuleRelationshipOptions struct {

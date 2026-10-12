@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/harness"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/harness"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
 )
 
 func (services *Services) RenderHarnessAdapter(

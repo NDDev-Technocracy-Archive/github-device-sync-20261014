@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/agent-runtime/goal"
+	"github.com/NDDev-Technocracy-Sandbox/agent-runtime/goal"
 )
 
 func fixedNow() time.Time { return time.Date(2026, 9, 1, 12, 0, 0, 0, time.UTC) }

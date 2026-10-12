@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NDDev-OpenNetwork/github-device-sync/schemas/v1/module-harness-bridge.schema.json",
+  "$id": "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync/schemas/v1/module-harness-bridge.schema.json",
   "title": "NDDev module to GDS harness bridge v2",
   "type": "object",
   "additionalProperties": false,

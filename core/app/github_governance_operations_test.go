@@ -11,9 +11,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/githubruntime"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/state"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/githubruntime"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/state"
 )
 
 func TestGitHubGovernancePlanIsReadyAndMissingWriteRuntimeFailsBeforeMutation(t *testing.T) {
@@ -111,7 +111,7 @@ func appGovernanceOperationServer(t *testing.T) *httptest.Server {
   "archived": false,
   "disabled": false,
   "default_branch": "main",
-  "html_url": "https://github.com/NDDev-OpenNetwork/github-device-sync",
+  "html_url": "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync",
   "owner": {"login": "NDDev-OpenNetwork"},
   "allow_merge_commit": true,
   "allow_squash_merge": false,

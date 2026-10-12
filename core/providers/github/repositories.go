@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitref"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitref"
 )
 
 var (

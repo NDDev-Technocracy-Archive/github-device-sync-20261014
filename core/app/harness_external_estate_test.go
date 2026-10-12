@@ -6,8 +6,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/harness"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/harness"
 )
 
 func TestHarnessObservationsUseConsumedEngineInExternalEstate(t *testing.T) {

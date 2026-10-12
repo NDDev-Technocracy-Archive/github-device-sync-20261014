@@ -9,13 +9,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/compiler"
-	contextresolver "github.com/NDDev-OpenNetwork/github-device-sync/core/context"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/manifest"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/projections"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/compiler"
+	contextresolver "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/context"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/manifest"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/projections"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func measureContext(

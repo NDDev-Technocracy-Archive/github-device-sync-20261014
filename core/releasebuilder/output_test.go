@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/bundle"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/bundle"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func TestReleaseOutputRoundTripAndTamperRejection(t *testing.T) {
@@ -221,7 +221,7 @@ func releaseFixture(
 	binary := []byte("binary")
 	sbom, err := buildSBOM(
 		"1.2.3", source,
-		[]moduleRecord{{Path: "github.com/NDDev-OpenNetwork/github-device-sync", Version: "1.2.3"}},
+		[]moduleRecord{{Path: "github.com/NDDev-Technocracy-Sandbox/github-device-sync", Version: "1.2.3"}},
 		[]binaryRecord{{Path: "bin/linux/amd64/gds", Content: binary, Digest: digestBytes(binary)}},
 		testGitIdentity,
 	)

@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/gitauthority"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/gitauthority"
 )
 
 var testGitIdentity = gitauthority.Identity{
@@ -17,7 +17,7 @@ var testGitIdentity = gitauthority.Identity{
 func TestBuildSBOMIsReproducibleAndValidated(t *testing.T) {
 	sum := sha256.Sum256([]byte("module archive"))
 	modules := []moduleRecord{
-		{Path: "github.com/NDDev-OpenNetwork/github-device-sync", Version: "1.2.3"},
+		{Path: "github.com/NDDev-Technocracy-Sandbox/github-device-sync", Version: "1.2.3"},
 		{Path: "example.com/dependency", Version: "v1.0.0", Sum: "h1:" + base64.StdEncoding.EncodeToString(sum[:])},
 	}
 	content := []byte("binary")
@@ -50,7 +50,7 @@ func TestBuildSBOMRejectsInvalidBinaryDigest(t *testing.T) {
 	_, err := buildSBOM(
 		"1.2.3",
 		Source{Commit: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", Timestamp: time.Now()},
-		[]moduleRecord{{Path: "github.com/NDDev-OpenNetwork/github-device-sync", Version: "1.2.3"}},
+		[]moduleRecord{{Path: "github.com/NDDev-Technocracy-Sandbox/github-device-sync", Version: "1.2.3"}},
 		[]binaryRecord{{Path: "bin/gds", Content: []byte("binary"), Digest: "sha256:" + string(make([]byte, 64))}},
 		testGitIdentity,
 	)

@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/domain"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/manifest"
-	moduleworkflow "github.com/NDDev-OpenNetwork/github-device-sync/core/module"
-	githubprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/github"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/manifest"
+	moduleworkflow "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/module"
+	githubprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/github"
 )
 
 // ModuleCoverageOptions selects the runtime and, optionally, one module.

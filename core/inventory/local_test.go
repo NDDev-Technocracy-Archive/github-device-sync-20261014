@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/discovery"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/manifest"
-	gitprovider "github.com/NDDev-OpenNetwork/github-device-sync/core/providers/git"
-	"github.com/NDDev-OpenNetwork/github-device-sync/core/validation"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/discovery"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/manifest"
+	gitprovider "github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/providers/git"
+	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/validation"
 )
 
 func TestCompileLocalInventory(t *testing.T) {
