@@ -15,14 +15,18 @@ repository:
 
 provider:
   type: "github"
-  installation: "installation:github-nddev-technocracy-sandbox"
+  installation: "installation:github-nddev-technocracy-opennetwork"
   repository_id: 1335994527
-  owner: "NDDev-Technocracy-Sandbox"
+  owner: "NDDev-Technocracy-OpenNetwork"
   name: "github-device-sync"
+
+  aliases:
+    - owner: "NDDev-Technocracy-Sandbox"
+      name: "github-device-sync"
 
 classification:
   portfolios:
-    - "portfolio:nddev-technocracy-sandbox"
+    - "portfolio:nddev-technocracy-opennetwork"
   visibility_contract: "public"
   data_classification: "public"
 
@@ -81,7 +85,7 @@ ci:
   build_command: "go build -trimpath ./core/cmd/gds"
   test_command: "go test ./..."
   timeout_minutes: 30
-  workflow_ref: "NDDev-OpenNetwork/ci-workflows/.github/workflows/go-ci.yml@a7b90bdf1ac12465cbd07072e3360442cfc8eec6"
+  workflow_ref: "NDDev-Technocracy-OpenNetwork/ci-workflows/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046"
   # A public repository, so GitHub-hosted runners are unmetered and a fork's
   # pull request cannot reach anything of ours. Self-hosted hardware here would
   # turn a fork PR into remote code execution on it.

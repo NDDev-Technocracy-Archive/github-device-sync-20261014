@@ -34,7 +34,7 @@ jobs:
     name: GDS fast
     permissions:
       contents: read
-    uses: NDDev-Technocracy-Sandbox/ci-workflows/.github/workflows/go-ci.yml@a7b90bdf1ac12465cbd07072e3360442cfc8eec6
+    uses: NDDev-Technocracy-OpenNetwork/ci-workflows/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046 # commit:93eeb2a65e98a29e9dbff7909f67c6419abff046
     with:
       fetch_depth: 0
       # Public hosted CI uses GitHub's service cache; the pinned reusable
@@ -54,7 +54,7 @@ jobs:
     needs: fast
     permissions:
       contents: read
-    uses: NDDev-Technocracy-Sandbox/ci-workflows/.github/workflows/go-ci.yml@a7b90bdf1ac12465cbd07072e3360442cfc8eec6
+    uses: NDDev-Technocracy-OpenNetwork/ci-workflows/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046 # commit:93eeb2a65e98a29e9dbff7909f67c6419abff046
     with:
       fetch_depth: 0
       cache: true
