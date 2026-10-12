@@ -44,15 +44,15 @@ func TestReconcileAllCompilesFiveInstallationsAndTwoThousandRepositories(t *test
 	organization := providerInventory("installation:github-organization", "example-org", 1001, 1000)
 	exampleMedia := providerInventory("installation:github-example-media", "example-media", 2001, 0)
 	guild := providerInventory("installation:github-guild", "example-guild", 3001, 0)
-	openNetwork := providerInventory("installation:github-opennetwork", "NDDev-OpenNetwork", 4001, 0)
+	openNetwork := providerInventory("installation:github-nddev-technocracy-opennetwork", "NDDev-Technocracy-OpenNetwork", 4001, 0)
 	result := (Reconciler{
 		Config: config, Concurrency: 2,
 		Readers: map[string]InstallationReader{
-			"installation:github-personal":      readerResult{inventory: personal},
-			"installation:github-organization":  readerResult{inventory: organization},
-			"installation:github-example-media": readerResult{inventory: exampleMedia},
-			"installation:github-guild":         readerResult{inventory: guild},
-			"installation:github-opennetwork":   readerResult{inventory: openNetwork},
+			"installation:github-personal":                      readerResult{inventory: personal},
+			"installation:github-organization":                  readerResult{inventory: organization},
+			"installation:github-example-media":                 readerResult{inventory: exampleMedia},
+			"installation:github-guild":                         readerResult{inventory: guild},
+			"installation:github-nddev-technocracy-opennetwork": readerResult{inventory: openNetwork},
 		},
 	}).ReconcileAll(context.Background())
 	if len(result.Findings) != 0 || len(result.Inventory.Repositories) != 2000 ||

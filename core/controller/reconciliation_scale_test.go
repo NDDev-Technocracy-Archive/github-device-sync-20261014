@@ -69,7 +69,7 @@ func TestReconciliationScalePersistsTwoThousandRepositoriesAndRecoversAfterOutag
 		"installation:github-guild", "example-guild", 2001, 0, firstObserved,
 	)}
 	openNetwork := &scaleInstallationReader{inventory: scaleInventory(
-		"installation:github-opennetwork", "NDDev-OpenNetwork", 2001, 0, firstObserved,
+		"installation:github-nddev-technocracy-opennetwork", "NDDev-Technocracy-OpenNetwork", 2001, 0, firstObserved,
 	)}
 	// Keep the context deadline beyond the asserted scale budget. A shorter
 	// deadline turns ordinary runner contention into a synthetic partial result
@@ -80,11 +80,11 @@ func TestReconciliationScalePersistsTwoThousandRepositoriesAndRecoversAfterOutag
 	run, err := (ReconciliationRunner{
 		Store: store, Config: desired,
 		Readers: map[string]reconciler.InstallationReader{
-			"installation:github-personal":      personal,
-			"installation:github-organization":  organization,
-			"installation:github-example-media": exampleMedia,
-			"installation:github-guild":         guild,
-			"installation:github-opennetwork":   openNetwork,
+			"installation:github-personal":                      personal,
+			"installation:github-organization":                  organization,
+			"installation:github-example-media":                 exampleMedia,
+			"installation:github-guild":                         guild,
+			"installation:github-nddev-technocracy-opennetwork": openNetwork,
 		},
 		Concurrency: 2, MaxRepositories: 2000,
 		Now: func() time.Time { return firstObserved }, Audit: reconciliationAudit{},
@@ -141,16 +141,16 @@ func TestReconciliationScalePersistsTwoThousandRepositoriesAndRecoversAfterOutag
 		"installation:github-guild", "example-guild", 2001, 0, secondObserved,
 	)}
 	openNetwork = &scaleInstallationReader{inventory: scaleInventory(
-		"installation:github-opennetwork", "NDDev-OpenNetwork", 2001, 0, secondObserved,
+		"installation:github-nddev-technocracy-opennetwork", "NDDev-Technocracy-OpenNetwork", 2001, 0, secondObserved,
 	)}
 	run, err = (ReconciliationRunner{
 		Store: store, Config: desired,
 		Readers: map[string]reconciler.InstallationReader{
-			"installation:github-personal":      personal,
-			"installation:github-organization":  organization,
-			"installation:github-example-media": exampleMedia,
-			"installation:github-guild":         guild,
-			"installation:github-opennetwork":   openNetwork,
+			"installation:github-personal":                      personal,
+			"installation:github-organization":                  organization,
+			"installation:github-example-media":                 exampleMedia,
+			"installation:github-guild":                         guild,
+			"installation:github-nddev-technocracy-opennetwork": openNetwork,
 		},
 		Concurrency: 2, MaxRepositories: 2000,
 		Now: func() time.Time { return secondObserved }, Audit: reconciliationAudit{},

@@ -59,7 +59,7 @@ func buildFixtureRepositories(options Options) []fixtureRepository {
 	// distribution the bounded-evidence counts are calibrated against. A fork
 	// is classified by the account that holds it, like any other repository.
 	forkOwners := []string{"example-user", "example-org"}
-	sourceOwners := []string{"example-user", "example-org", "example-media", "NDDev-OpenNetwork"}
+	sourceOwners := []string{"example-user", "example-org", "example-media", "NDDev-Technocracy-OpenNetwork"}
 	for index := 0; index < options.RepositoryCount; index++ {
 		providerID := int64(index + 1)
 		fork := index < options.ForkCount
@@ -74,7 +74,7 @@ func buildFixtureRepositories(options Options) []fixtureRepository {
 			visibility = "public"
 		}
 		// The OpenNetwork owner contract is public-only.
-		if owner == "NDDev-OpenNetwork" {
+		if owner == "NDDev-Technocracy-OpenNetwork" {
 			visibility = "public"
 		}
 		provider := githubprovider.Repository{
@@ -121,8 +121,8 @@ func fixtureInventories(
 			InstallationID: "installation:github-guild", ObservedAt: observedAt,
 			Permissions: permissions, RequestIDs: []string{"request-guild"},
 		},
-		"installation:github-opennetwork": {
-			InstallationID: "installation:github-opennetwork", ObservedAt: observedAt,
+		"installation:github-nddev-technocracy-opennetwork": {
+			InstallationID: "installation:github-nddev-technocracy-opennetwork", ObservedAt: observedAt,
 			Permissions: permissions, RequestIDs: []string{"request-opennetwork"},
 		},
 	}
@@ -134,8 +134,8 @@ func fixtureInventories(
 			installationID = "installation:github-example-media"
 		} else if repository.Provider.Owner == "example-guild" {
 			installationID = "installation:github-guild"
-		} else if repository.Provider.Owner == "NDDev-OpenNetwork" {
-			installationID = "installation:github-opennetwork"
+		} else if repository.Provider.Owner == "NDDev-Technocracy-OpenNetwork" {
+			installationID = "installation:github-nddev-technocracy-opennetwork"
 		}
 		inventory := result[installationID]
 		inventory.Repositories = append(inventory.Repositories, repository.Provider)

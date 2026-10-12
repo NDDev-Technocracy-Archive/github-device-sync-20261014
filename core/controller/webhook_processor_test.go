@@ -240,7 +240,7 @@ func repositoryProcessorFixture(
 			"installation:github-guild": {
 				AppID: "4", ProviderInstallationID: "900004",
 			},
-			"installation:github-opennetwork": {
+			"installation:github-nddev-technocracy-opennetwork": {
 				AppID: "5", ProviderInstallationID: "900005",
 			},
 		},
@@ -248,11 +248,11 @@ func repositoryProcessorFixture(
 	processor, err := NewRepositoryProcessor(
 		store, desired, runtimeConfig,
 		map[string]RepositoryReader{
-			"installation:github-personal":      personal,
-			"installation:github-organization":  &repositoryReaderResult{},
-			"installation:github-example-media": &repositoryReaderResult{},
-			"installation:github-guild":         &repositoryReaderResult{},
-			"installation:github-opennetwork":   &repositoryReaderResult{},
+			"installation:github-personal":                      personal,
+			"installation:github-organization":                  &repositoryReaderResult{},
+			"installation:github-example-media":                 &repositoryReaderResult{},
+			"installation:github-guild":                         &repositoryReaderResult{},
+			"installation:github-nddev-technocracy-opennetwork": &repositoryReaderResult{},
 		},
 		full,
 	)
