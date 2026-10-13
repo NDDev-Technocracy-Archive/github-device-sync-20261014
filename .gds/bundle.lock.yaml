@@ -9,10 +9,10 @@ bundle:
   attestation_identity_digest: "sha256:a0bc45ec7864d753bab99bf690fe22eb327bf1f14fd53d946779e50df3f76f9b"
 
 projection:
-  input_digest: "sha256:55f68f122dabae10d1c3cf1bbf8be85d075b008bca11051be38f37dbe592709d"
-  output_digest: "sha256:73f44eb6863fdaf0bf6508204a3f720a380c8732b868d119d3ac5f386cab4dcc"
+  input_digest: "sha256:26c2329cb6dd79c75ef844b5602db14286deb2e9c17ace32df26c340fb673e3e"
+  output_digest: "sha256:cea61caa6d27d7c32a1f1e952aebfa7713d81526b08098bc0b01472f1db3f024"
   files:
     - path: ".gds/compiled-policy.json"
       digest: "sha256:52e27751f2cc78d9e37fd0a05877aa0e12031263912aba2e05276907509decc4"
     - path: ".github/workflows/gds-ci.yml"
-      digest: "sha256:66d098963768b97ab82156723b9b488223e0408b6a1cf0caa3184d16a2c9f722"
+      digest: "sha256:b6577eb6872c469c56859339a8c8f2d6cdccd3684b0e3e14b5ecee07f4af74ea"

@@ -98,22 +98,22 @@ func appProjectionOperationServer(t *testing.T) *httptest.Server {
 				strings.TrimPrefix(request.URL.Path, "/app/installations/"), "/access_tokens",
 			)
 			_, _ = fmt.Fprintf(writer, `{"token":"ghs_%s","expires_at":"2099-01-01T00:00:00Z","permissions":{"actions":"read","administration":"read","checks":"read","contents":"read","metadata":"read","pull_requests":"read"},"repository_selection":"all"}`, providerID)
-		case request.URL.Path == "/repos/NDDev-Technocracy-OpenNetwork/github-device-sync":
+		case request.URL.Path == "/repos/NDDev-Technocracy-Archive/github-device-sync-20261014":
 			_, _ = writer.Write([]byte(`{
   "id": 1335994527,
   "node_id": "R_gds",
-  "name": "github-device-sync",
-  "full_name": "NDDev-Technocracy-OpenNetwork/github-device-sync",
+  "name": "github-device-sync-20261014",
+  "full_name": "NDDev-Technocracy-Archive/github-device-sync-20261014",
   "private": false,
   "visibility": "public",
   "fork": false,
   "archived": false,
   "disabled": false,
   "default_branch": "main",
-  "html_url": "https://github.com/NDDev-Technocracy-OpenNetwork/github-device-sync",
-  "owner": {"login": "NDDev-Technocracy-OpenNetwork"}
+  "html_url": "https://github.com/NDDev-Technocracy-Archive/github-device-sync-20261014",
+  "owner": {"login": "NDDev-Technocracy-Archive"}
 }`))
-		case request.URL.Path == "/repos/NDDev-Technocracy-OpenNetwork/github-device-sync/git/ref/heads/main":
+		case request.URL.Path == "/repos/NDDev-Technocracy-Archive/github-device-sync-20261014/git/ref/heads/main":
 			_, _ = fmt.Fprintf(writer, `{"ref":"refs/heads/main","object":{"sha":%q}}`, baseSHA)
 		case strings.Contains(request.URL.Path, "/git/ref/heads/gds/projection-"):
 			http.NotFound(writer, request)

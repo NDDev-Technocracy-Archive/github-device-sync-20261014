@@ -7,26 +7,27 @@ schema_version: 1
 # commit cost more than it ever caught.
 repository:
   id: "repo_01M0EZ7TB3KNXNSP78Z8M64WXG"
-  display_name: "github-device-sync"
+  display_name: github-device-sync-20261014
   roles:
     - "project"
     - "module"
   lifecycle: "active"
-
 provider:
   type: "github"
-  installation: "installation:github-nddev-technocracy-opennetwork"
+  installation: "installation:github-nddev-technocracy-archive"
   repository_id: 1335994527
-  owner: "NDDev-Technocracy-OpenNetwork"
-  name: "github-device-sync"
+  owner: NDDev-Technocracy-Archive
+  name: github-device-sync-20261014
 
   aliases:
+    - owner: NDDev-Technocracy-OpenNetwork
+      name: github-device-sync
     - owner: "NDDev-Technocracy-Sandbox"
       name: "github-device-sync"
 
 classification:
   portfolios:
-    - "portfolio:nddev-technocracy-opennetwork"
+    - "portfolio:nddev-technocracy-archive"
   visibility_contract: "public"
   data_classification: "public"
 
@@ -85,7 +86,7 @@ ci:
   build_command: "go build -trimpath ./core/cmd/gds"
   test_command: "go test ./..."
   timeout_minutes: 30
-  workflow_ref: "NDDev-Technocracy-OpenNetwork/ci-workflows/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046"
+  workflow_ref: "NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046"
   # A public repository, so GitHub-hosted runners are unmetered and a fork's
   # pull request cannot reach anything of ours. Self-hosted hardware here would
   # turn a fork PR into remote code execution on it.
