@@ -11,7 +11,7 @@ repository:
   roles:
     - "project"
     - "module"
-  lifecycle: archived
+  lifecycle: "active"
 provider:
   type: "github"
   installation: "installation:github-nddev-technocracy-archive"
@@ -86,7 +86,7 @@ ci:
   build_command: "go build -trimpath ./core/cmd/gds"
   test_command: "go test ./..."
   timeout_minutes: 30
-  workflow_ref: "NDDev-Technocracy-OpenNetwork/ci-workflows/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046"
+  workflow_ref: "NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046"
   # A public repository, so GitHub-hosted runners are unmetered and a fork's
   # pull request cannot reach anything of ours. Self-hosted hardware here would
   # turn a fork PR into remote code execution on it.

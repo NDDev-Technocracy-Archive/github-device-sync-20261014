@@ -220,7 +220,7 @@ func appTestGitHubServer(t *testing.T, wrongPersonalOwner bool) *httptest.Server
 			} else if strings.Contains(request.Header.Get("Authorization"), "900004") {
 				owner, id = "example-guild", 1004
 			} else if strings.Contains(request.Header.Get("Authorization"), "900005") {
-				owner, id = "NDDev-Technocracy-OpenNetwork", 1005
+				owner, id = "NDDev-Technocracy-Archive", 1005
 			} else if wrongPersonalOwner {
 				owner = "unexpected-owner"
 			}
@@ -291,13 +291,16 @@ func appTestGitHubServer(t *testing.T, wrongPersonalOwner bool) *httptest.Server
 	}))
 }
 
-func appTestRuntimeConfig(t *testing.T, root string) string {
+func appTestRuntimeConfig(t *testing.T, root string, canonicalExample ...bool) string {
 	t.Helper()
 	raw, err := os.ReadFile(filepath.Join(
 		root, "tests", "fixtures", "schemas", "v1", "valid-github-runtime.yaml",
 	))
 	if err != nil {
 		t.Fatal(err)
+	}
+	if len(canonicalExample) == 0 || !canonicalExample[0] {
+		raw = []byte(strings.ReplaceAll(string(raw), "installation:github-nddev-technocracy-opennetwork", "installation:github-nddev-technocracy-archive"))
 	}
 	path := filepath.Join(t.TempDir(), "github-runtime.yaml")
 	if err := os.WriteFile(path, raw, 0o600); err != nil {
@@ -330,6 +333,25 @@ func appTestRepositoryRoot(t *testing.T) string {
 		if err := copyAppTestTree(root, estateRoot, directory); err != nil {
 			t.Fatal(err)
 		}
+	}
+	// Bind the existing synthetic estate to the current self-provider coordinate.
+	// Only temporary fixture bytes change; canonical example policy stays intact.
+	if err := filepath.WalkDir(filepath.Join(estateRoot, "estate"), func(path string, entry fs.DirEntry, walkErr error) error {
+		if walkErr != nil {
+			return walkErr
+		}
+		if entry.IsDir() || !strings.HasSuffix(path, ".yaml") {
+			return nil
+		}
+		raw, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		text := strings.ReplaceAll(string(raw), "NDDev-Technocracy-OpenNetwork", "NDDev-Technocracy-Archive")
+		text = strings.ReplaceAll(text, "installation:github-nddev-technocracy-opennetwork", "installation:github-nddev-technocracy-archive")
+		return os.WriteFile(path, []byte(text), 0o644)
+	}); err != nil {
+		t.Fatal(err)
 	}
 	raw, err := os.ReadFile(filepath.Join(root, ".gds", "repository.yaml"))
 	if err != nil {

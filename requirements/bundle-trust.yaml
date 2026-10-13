@@ -3,8 +3,8 @@ schema_version: 1
 trust_domain: "gds-release"
 
 source:
-  owner: "NDDev-Technocracy-OpenNetwork"
-  repository: "github-device-sync"
+  owner: "NDDev-Technocracy-Archive"
+  repository: "github-device-sync-20261014"
   allowed_workflows:
     - ".github/workflows/release-bundle.yml"
   allowed_refs:

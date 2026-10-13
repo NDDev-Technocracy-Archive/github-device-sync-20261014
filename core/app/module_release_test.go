@@ -33,7 +33,7 @@ import (
 
 func TestModuleReleaseChecksBindTrustedActionsSuccessToExactCommit(t *testing.T) {
 	root := appTestRepositoryRoot(t)
-	runtimePath := appTestRuntimeConfig(t, root)
+	runtimePath := appTestRuntimeConfig(t, root, true)
 	oid := strings.Repeat("a", 40)
 	server := httptest.NewServer(http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
 		switch {
