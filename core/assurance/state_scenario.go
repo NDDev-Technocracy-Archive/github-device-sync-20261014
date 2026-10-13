@@ -61,16 +61,16 @@ func exerciseDurableState(
 	organization := &fixtureReader{inventory: inventories["installation:github-organization"]}
 	exampleMedia := &fixtureReader{inventory: inventories["installation:github-example-media"]}
 	guild := &fixtureReader{inventory: inventories["installation:github-guild"]}
-	openNetwork := &fixtureReader{inventory: inventories["installation:github-opennetwork"]}
+	openNetwork := &fixtureReader{inventory: inventories["installation:github-nddev-technocracy-opennetwork"]}
 	reconcileStarted := time.Now()
 	first, err := (controller.ReconciliationRunner{
 		Store: store, Config: config,
 		Readers: map[string]reconciler.InstallationReader{
-			"installation:github-personal":      personal,
-			"installation:github-organization":  organization,
-			"installation:github-example-media": exampleMedia,
-			"installation:github-guild":         guild,
-			"installation:github-opennetwork":   openNetwork,
+			"installation:github-personal":                      personal,
+			"installation:github-organization":                  organization,
+			"installation:github-example-media":                 exampleMedia,
+			"installation:github-guild":                         guild,
+			"installation:github-nddev-technocracy-opennetwork": openNetwork,
 		},
 		Concurrency:     options.ReconciliationConcurrency,
 		MaxRepositories: options.RepositoryCount,
@@ -190,22 +190,22 @@ func exerciseDurableState(
 	personal = &fixtureReader{inventory: secondInventories["installation:github-personal"]}
 	organization = &fixtureReader{err: errors.New("simulated provider outage")}
 	exampleMedia = &fixtureReader{inventory: secondInventories["installation:github-example-media"]}
-	openNetwork = &fixtureReader{inventory: secondInventories["installation:github-opennetwork"]}
+	openNetwork = &fixtureReader{inventory: secondInventories["installation:github-nddev-technocracy-opennetwork"]}
 	second, err := (controller.ReconciliationRunner{
 		Store: store, Config: config,
 		Readers: map[string]reconciler.InstallationReader{
-			"installation:github-personal":      personal,
-			"installation:github-organization":  organization,
-			"installation:github-example-media": exampleMedia,
-			"installation:github-guild":         guild,
-			"installation:github-opennetwork":   openNetwork,
+			"installation:github-personal":                      personal,
+			"installation:github-organization":                  organization,
+			"installation:github-example-media":                 exampleMedia,
+			"installation:github-guild":                         guild,
+			"installation:github-nddev-technocracy-opennetwork": openNetwork,
 		},
 		Concurrency:     options.ReconciliationConcurrency,
 		MaxRepositories: options.RepositoryCount,
 		Now:             func() time.Time { return secondObserved }, Audit: fixtureAudit{},
 	}).Run(ctx)
 	if err != nil || second.Status != "partial" ||
-		len(second.Result.Inventory.Repositories) != len(secondInventories["installation:github-personal"].Repositories)+len(secondInventories["installation:github-example-media"].Repositories)+len(secondInventories["installation:github-opennetwork"].Repositories) ||
+		len(second.Result.Inventory.Repositories) != len(secondInventories["installation:github-personal"].Repositories)+len(secondInventories["installation:github-example-media"].Repositories)+len(secondInventories["installation:github-nddev-technocracy-opennetwork"].Repositories) ||
 		!hasFinding(second.Result.Findings, "GDS_RECONCILE_INSTALLATION_NOT_PROVEN") {
 		return durableStateResult{}, fmt.Errorf(
 			"installation outage was not isolated: status=%s err=%v", second.Status, err,

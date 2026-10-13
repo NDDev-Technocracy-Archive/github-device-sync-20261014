@@ -80,8 +80,8 @@ func TestReconciliationRunnerPersistsObservationsAndJournal(t *testing.T) {
 				Visibility: "private", DefaultBranch: "main",
 			}},
 		}},
-		"installation:github-opennetwork": reconciliationReader{inventory: githubprovider.Inventory{
-			InstallationID: "installation:github-opennetwork", ObservedAt: now,
+		"installation:github-nddev-technocracy-opennetwork": reconciliationReader{inventory: githubprovider.Inventory{
+			InstallationID: "installation:github-nddev-technocracy-opennetwork", ObservedAt: now,
 		}},
 	}
 	run, err := (ReconciliationRunner{

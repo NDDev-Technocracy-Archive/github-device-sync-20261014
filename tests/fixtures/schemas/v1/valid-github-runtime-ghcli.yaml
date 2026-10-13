@@ -14,8 +14,8 @@ github:
     "installation:github-guild":
       account_login: "example-guild"
       account_type: "organization"
-    "installation:github-opennetwork":
-      account_login: "NDDev-OpenNetwork"
+    "installation:github-nddev-technocracy-opennetwork":
+      account_login: "NDDev-Technocracy-OpenNetwork"
       account_type: "organization"
   max_repositories: 2000
 
@@ -26,4 +26,4 @@ secret_store:
     "secret:gds/github-app/personal": "example-user"
     "secret:gds/github-app/example-media": "example-media"
     "secret:gds/github-app/guild": "example-guild"
-    "secret:gds/github-app/opennetwork": "NDDev-OpenNetwork"
+    "secret:gds/github-app/opennetwork": "NDDev-Technocracy-OpenNetwork"

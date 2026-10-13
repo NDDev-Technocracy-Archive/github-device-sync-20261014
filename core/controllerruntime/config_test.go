@@ -29,7 +29,7 @@ github:
     "installation:github-guild":
       app_id: "123459"
       provider_installation_id: "900004"
-    "installation:github-opennetwork":
+    "installation:github-nddev-technocracy-opennetwork":
       app_id: "123460"
       provider_installation_id: "900005"
   max_repositories: 2000

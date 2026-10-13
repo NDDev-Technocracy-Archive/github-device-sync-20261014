@@ -44,9 +44,9 @@ func TestGitHubGovernancePlanIsReadyAndMissingWriteRuntimeFailsBeforeMutation(t 
 	options := GitHubGovernanceOperationOptions{
 		GitHubGovernanceOptions: GitHubGovernanceOptions{
 			GitHubReadOptions: GitHubReadOptions{
-				RuntimeConfig: runtimePath, InstallationID: "installation:github-opennetwork",
+				RuntimeConfig: runtimePath, InstallationID: "installation:github-nddev-technocracy-opennetwork",
 			},
-			Owner: "NDDev-OpenNetwork", Repository: "github-device-sync",
+			Owner: "NDDev-Technocracy-OpenNetwork", Repository: "github-device-sync",
 		},
 		ProjectionOperationOptions: ProjectionOperationOptions{
 			StatePath: statePath, DeviceID: "device_01JEXAMPZ00000000000000000",
@@ -81,8 +81,8 @@ func TestGitHubGovernanceObserverUsesPlanBoundEstateRoot(t *testing.T) {
 	observer := githubGovernanceObserver{
 		services: services, root: root, estateRoot: filepath.Join(t.TempDir(), "missing-estate"),
 		repositoryID: "repo_01M0EZ7TB3KNXNSP78Z8M64WXG", providerID: 1335994527,
-		owner: "NDDev-OpenNetwork", name: "github-device-sync",
-		installation: "installation:github-opennetwork",
+		owner: "NDDev-Technocracy-OpenNetwork", name: "github-device-sync",
+		installation: "installation:github-nddev-technocracy-opennetwork",
 	}
 	_, err = observer.Observe(context.Background(), observer.repositoryID)
 	if err == nil || !strings.Contains(err.Error(), "policy does not compile") {
@@ -99,20 +99,20 @@ func appGovernanceOperationServer(t *testing.T) *httptest.Server {
 				strings.TrimPrefix(request.URL.Path, "/app/installations/"), "/access_tokens",
 			)
 			_, _ = fmt.Fprintf(writer, `{"token":"ghs_%s","expires_at":"2099-01-01T00:00:00Z","permissions":{"actions":"read","administration":"read","checks":"read","contents":"read","metadata":"read","pull_requests":"read"},"repository_selection":"all"}`, providerID)
-		case request.URL.Path == "/repos/NDDev-OpenNetwork/github-device-sync":
+		case request.URL.Path == "/repos/NDDev-Technocracy-OpenNetwork/github-device-sync":
 			_, _ = writer.Write([]byte(`{
   "id": 1335994527,
   "node_id": "R_gds",
   "name": "github-device-sync",
-  "full_name": "NDDev-OpenNetwork/github-device-sync",
+  "full_name": "NDDev-Technocracy-OpenNetwork/github-device-sync",
   "private": false,
   "visibility": "public",
   "fork": false,
   "archived": false,
   "disabled": false,
   "default_branch": "main",
-  "html_url": "https://github.com/NDDev-Technocracy-Sandbox/github-device-sync",
-  "owner": {"login": "NDDev-OpenNetwork"},
+  "html_url": "https://github.com/NDDev-Technocracy-OpenNetwork/github-device-sync",
+  "owner": {"login": "NDDev-Technocracy-OpenNetwork"},
   "allow_merge_commit": true,
   "allow_squash_merge": false,
   "allow_rebase_merge": true,
@@ -128,7 +128,7 @@ func appGovernanceOperationServer(t *testing.T) *httptest.Server {
 		case strings.HasSuffix(request.URL.Path, "/actions/permissions/workflow"):
 			_, _ = writer.Write([]byte(`{"default_workflow_permissions":"read","can_approve_pull_request_reviews":false}`))
 		case strings.HasSuffix(request.URL.Path, "/actions/permissions/selected-actions"):
-			_, _ = writer.Write([]byte(`{"github_owned_allowed":true,"verified_allowed":false,"patterns_allowed":["NDDev-OpenNetwork/ci-workflows/.github/workflows/*@*"]}`))
+			_, _ = writer.Write([]byte(`{"github_owned_allowed":true,"verified_allowed":false,"patterns_allowed":["NDDev-Technocracy-OpenNetwork/ci-workflows/.github/workflows/*@*"]}`))
 		case strings.HasSuffix(request.URL.Path, "/actions/permissions"):
 			_, _ = writer.Write([]byte(`{"enabled":true,"allowed_actions":"selected","sha_pinning_required":true}`))
 		case strings.HasSuffix(request.URL.Path, "/rulesets"):
@@ -175,9 +175,9 @@ func TestGovernanceExplicitEstateOverridesEnvironmentForPolicy(t *testing.T) {
 		GitHubGovernanceOptions: GitHubGovernanceOptions{
 			GitHubReadOptions: GitHubReadOptions{
 				EstateRoot: alias, RuntimeConfig: runtimePath,
-				InstallationID: "installation:github-opennetwork",
+				InstallationID: "installation:github-nddev-technocracy-opennetwork",
 			},
-			Owner: "NDDev-OpenNetwork", Repository: "github-device-sync", CompareLocal: true,
+			Owner: "NDDev-Technocracy-OpenNetwork", Repository: "github-device-sync", CompareLocal: true,
 		},
 	}
 	current, failure := services.githubGovernanceContext(context.Background(), root, options, "test")

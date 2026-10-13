@@ -16,7 +16,7 @@ installations:
   - "installation:github-organization"
   - "installation:github-example-media"
   - "installation:github-guild"
-  - "installation:github-opennetwork"
+  - "installation:github-nddev-technocracy-opennetwork"
 
 mutation_capabilities:
   - "mutation:github-organization"

@@ -220,7 +220,7 @@ func appTestGitHubServer(t *testing.T, wrongPersonalOwner bool) *httptest.Server
 			} else if strings.Contains(request.Header.Get("Authorization"), "900004") {
 				owner, id = "example-guild", 1004
 			} else if strings.Contains(request.Header.Get("Authorization"), "900005") {
-				owner, id = "NDDev-OpenNetwork", 1005
+				owner, id = "NDDev-Technocracy-OpenNetwork", 1005
 			} else if wrongPersonalOwner {
 				owner = "unexpected-owner"
 			}

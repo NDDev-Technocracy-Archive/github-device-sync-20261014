@@ -48,7 +48,7 @@ func TestBuildReadersCLIBuildsSupersetClients(t *testing.T) {
 			_, _ = fmt.Fprint(writer, `[]`)
 		case "/orgs/example-guild/repos":
 			_, _ = fmt.Fprint(writer, `[]`)
-		case "/orgs/NDDev-OpenNetwork/repos":
+		case "/orgs/NDDev-Technocracy-OpenNetwork/repos":
 			_, _ = fmt.Fprint(writer, `[]`)
 		default:
 			http.NotFound(writer, request)
