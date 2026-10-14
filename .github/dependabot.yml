@@ -45,7 +45,7 @@ updates:
     # output alone breaks its bundle provenance. Other workflow pins remain
     # visible as Dependabot proposals and retain ordinary review.
     ignore:
-      - dependency-name: "NDDev-Technocracy-OpenNetwork/ci-workflows/.github/workflows/go-ci.yml"
+      - dependency-name: "NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/go-ci.yml"
     groups:
       github-actions:
         applies-to: version-updates
