@@ -127,7 +127,6 @@ agent:
 relationships: []
 
 module:
-  development: "standalone"
   contract: "public"
   consumption:
     - "git-submodule"

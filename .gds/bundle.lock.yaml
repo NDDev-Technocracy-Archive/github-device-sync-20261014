@@ -8,10 +8,10 @@ bundle:
   digest: "sha256:c4ff5af2a3c4b64cbf1f272731c0fda901c018e37a41dabde1e4e35192c230d4"
 
 projection:
-  input_digest: "sha256:e6bd90ef6dab4e16a2b1d1864790187195da7f2b6b0046a7829833f6a7e1451d"
-  output_digest: "sha256:4e855a3891fec67c1c0b94ec0dab878b55fa76993b9e4a80057870237acb095e"
+  input_digest: "sha256:50c06d3a6832913ca32d66c7b23fd2bf93014ca91eeaa78486982e9eab2d85bc"
+  output_digest: "sha256:f2dc296280d1e667811e01d5f82d12a8f7247357904174a956dd3043c110096e"
   files:
     - path: ".gds/compiled-policy.json"
       digest: "sha256:9f498788bdc34e52a0ab793c536e0e6a7b360c2e1a20446cbf03ed51986cdc6f"
     - path: ".github/workflows/gds-ci.yml"
-      digest: "sha256:5a5e8c2f0b67696d653097bf4eec82b4d76a7605feee82e648ce8eb52ab4ed36"
+      digest: "sha256:9f32f043aff0101907abfa5f9f65fc6435ff3baac9cc95d6d0c086076ef5d549"
