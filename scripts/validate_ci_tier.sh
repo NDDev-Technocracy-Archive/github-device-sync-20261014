@@ -9,7 +9,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 cd "$ROOT"
-export GOTOOLCHAIN=${GOTOOLCHAIN:-go1.27.1}
+export GOTOOLCHAIN=${GOTOOLCHAIN:-go1.27.2}
 export GOWORK=off
 export GOFLAGS=-mod=readonly
 
