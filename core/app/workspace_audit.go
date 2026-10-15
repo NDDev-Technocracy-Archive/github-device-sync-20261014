@@ -105,6 +105,9 @@ func (services *Services) AuditWorkspaceLayout(
 	}
 
 	identityIndex, identityFindings := estate.BuildIdentityIndex(indexed, false)
+	identityFindings = workspace.SuppressDeclaredDualMaterialization(
+		identityFindings, layoutInput,
+	)
 	findings = append(findings, identityFindings...)
 	layoutReport, layoutFindings := workspace.AuditLayout(
 		device.Descriptor, environment, layoutInput,

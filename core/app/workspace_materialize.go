@@ -492,7 +492,18 @@ func (services *Services) embeddedOnlyFinding(
 			anchors = append(anchors, anchorValue)
 		}
 	}
+	// The repository being materialized may not exist on this device yet; an
+	// anchor carrying only its identity keeps the conservative ADR 0027
+	// default until the declared anchor can be read.
+	target := domain.RepositoryAnchor{}
+	target.Repository.ID = repositoryID
+	for _, anchor := range anchors {
+		if anchor.Repository.ID == repositoryID {
+			target = anchor
+			break
+		}
+	}
 	return workspace.EmbeddedOnlyFinding(
-		repositoryID, workspace.EmbeddedConsumers(anchors, repositoryID),
+		target, workspace.EmbeddedConsumers(anchors, repositoryID),
 	)
 }

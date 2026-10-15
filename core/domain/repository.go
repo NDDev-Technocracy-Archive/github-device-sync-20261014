@@ -164,6 +164,12 @@ type ModulePolicy struct {
 	Compatibility string            `json:"compatibility" yaml:"compatibility"`
 	PinPolicy     string            `json:"pin_policy" yaml:"pin_policy"`
 	Publication   ModulePublication `json:"publication" yaml:"publication"`
+	// Development declares where working changes for this module are made.
+	// Empty or "embedded" keeps the ADR 0027 contract: development happens
+	// inside the consuming superproject checkout and the repository has no
+	// standalone checkout. "standalone" (ADR 0042) declares the repository is
+	// developed in its own checkout while consumers pin it through gitlinks.
+	Development string `json:"development,omitempty" yaml:"development,omitempty"`
 }
 
 type ModulePublication struct {

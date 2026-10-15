@@ -1,6 +1,7 @@
 package workspace
 
 import (
+	"path/filepath"
 	"sort"
 
 	"github.com/NDDev-Technocracy-Sandbox/github-device-sync/core/domain"
@@ -56,14 +57,21 @@ func EmbeddedConsumers(
 // EmbeddedOnlyFinding reports `GDS_WORKSPACE_EMBEDDED_ONLY` when a repository
 // carries at least one incoming submodule-consumer edge and therefore may exist
 // only as its superproject's gitlink. It returns nil when standalone placement
-// is permitted.
+// is permitted: either no consumer edge exists (ADR 0018) or the module
+// declares `development: standalone` (ADR 0042), in which case its embedded
+// materializations are consumed pins beside the standalone development
+// checkout.
 func EmbeddedOnlyFinding(
-	repositoryID string,
+	anchor domain.RepositoryAnchor,
 	consumers []EmbeddedConsumer,
 ) *domain.Finding {
 	if len(consumers) == 0 {
 		return nil
 	}
+	if anchor.Module != nil && anchor.Module.Development == "standalone" {
+		return nil
+	}
+	repositoryID := anchor.Repository.ID
 	names := make([]string, 0, len(consumers))
 	gitmodules := make([]string, 0, len(consumers))
 	for _, consumer := range consumers {
@@ -82,4 +90,40 @@ func EmbeddedOnlyFinding(
 			"gitmodules_name": gitmodules,
 		},
 	}
+}
+
+// SuppressDeclaredDualMaterialization drops identity-index conflicts that only
+// restate the declared `development: standalone` shape: a module developed in
+// its own checkout legitimately claims its identity once standalone and once
+// per embedded consumer gitlink (ADR 0042). A pair of two standalone checkouts
+// claiming one identity is still a conflict, as is any dual claim by a module
+// that did not declare standalone development.
+func SuppressDeclaredDualMaterialization(
+	findings []domain.Finding,
+	repositories []LayoutRepository,
+) []domain.Finding {
+	development := map[string]string{}
+	embeddedPath := map[string]bool{}
+	for _, repository := range repositories {
+		if repository.Anchor.Module != nil {
+			development[repository.Anchor.Repository.ID] = repository.Anchor.Module.Development
+		}
+		if repository.SuperprojectRoot != "" {
+			embeddedPath[filepath.Clean(repository.Path)] = true
+		}
+	}
+	kept := make([]domain.Finding, 0, len(findings))
+	for _, finding := range findings {
+		if finding.Code == "GDS_IDENTITY_INDEX_ID_CONFLICT" {
+			repositoryID, _ := finding.Evidence["repository_id"].(string)
+			first, _ := finding.Evidence["first_path"].(string)
+			second, _ := finding.Evidence["second_path"].(string)
+			if development[repositoryID] == "standalone" &&
+				(embeddedPath[filepath.Clean(first)] || embeddedPath[filepath.Clean(second)]) {
+				continue
+			}
+		}
+		kept = append(kept, finding)
+	}
+	return kept
 }
