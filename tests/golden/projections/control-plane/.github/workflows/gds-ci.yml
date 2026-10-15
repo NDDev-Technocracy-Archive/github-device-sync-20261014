@@ -2,8 +2,8 @@
 # generator: gds
 # bundle: 0.9.7-dev
 # source-tree-digest: sha256:0000000000000000000000000000000000000000000000000000000000000001
-# input-digest: sha256:509c5298fe7a445462ace6289e19aa82fa978740bb8ac8d30e8f7d5a65a43a7e
-# output-digest: sha256:a4acec9be853a18520ee877ec42721d1e1371039b7f8b8cd3e3c46a8906d40e4
+# input-digest: sha256:639a232a519d2084758eb5bb6118ea312fc8140ceb6e25565b439ae72fce9a34
+# output-digest: sha256:6f60454d0922fd1df7e2c0a4d93fb6f196a4da00397e1e1ada7f72987a456399
 # edit-source:
 #   - .gds/repository.yaml
 #   - policies/base/repository-default.yaml
@@ -41,7 +41,7 @@ jobs:
       cache: true
 
       runner: "ubuntu-latest"
-      go_version: "1.27.1"
+      go_version: "1.27.2"
       # Declared fast commands own their build scope; the complete build is below.
       build_command: ""
       test_command: "scripts/validate_shell.sh && scripts/validate_go_core.sh --fast"
@@ -58,7 +58,7 @@ jobs:
       fetch_depth: 0
       cache: true
       runner: "ubuntu-latest"
-      go_version: "1.27.1"
+      go_version: "1.27.2"
       build_command: "go build -trimpath ./core/cmd/gds"
       test_command: "go test ./... && python3 -m pip install --quiet --require-hashes -r requirements/test.txt && python3 -m pytest"
       timeout_minutes: 30
