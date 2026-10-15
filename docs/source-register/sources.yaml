@@ -4,10 +4,10 @@ sources:
     authority: official
     url: https://learn.chatgpt.com/docs/agent-configuration/agents-md
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:d54ef066bc568d7e605888050ee702490a4f9dac8b34c4a93ff864ea843abd59
+    content_digest: sha256:0013473118bb31c81d232c56d664a6af3c7d1c2f0ab6d7c47f016edc799c4f18
     governs:
       - codex.instruction-discovery
       - codex.instruction-budget
@@ -15,10 +15,10 @@ sources:
     authority: official
     url: https://learn.chatgpt.com/docs/build-skills
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:1fbf81b79b26e60d62767129698fc51121bf8796a71128cbc014b7ce0258d138
+    content_digest: sha256:52d13cf840968988564ca4b0d05244d2a34ef08812146c47c468fe8731bd3660
     governs:
       - codex.skill-discovery
       - codex.skill-metadata-budget
@@ -27,10 +27,10 @@ sources:
     authority: official
     url: https://learn.chatgpt.com/docs/hooks
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:1b787df9ba118879aead18e555048a150a8fab6c0b19cc80ccffce285a7cf13d
+    content_digest: sha256:05a5c919656a944201a5955a14b06824b694469c08d0fd96ab157d2ad5d3322e
     governs:
       - codex.hook-schema
       - codex.hook-trust
@@ -39,10 +39,10 @@ sources:
     authority: official
     url: https://developers.openai.com/plugins/build/plugins
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:5a339e3524080ab42d07e4a1eacf2449c53823deaf2b43f852eb6ebcc70ad77b
+    content_digest: sha256:c37e330df8f040df8ee2f48035992b37c6a7decf6c3f5640822ca0907118c4e1
     governs:
       - codex.plugin-layout
       - codex.plugin-manifest
@@ -50,10 +50,10 @@ sources:
     authority: official
     url: https://code.claude.com/docs/en/memory.md
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:f212449ea6fbdb88bea34ad85c967ae3681470bdbd376ac84bda7f535029e677
+    content_digest: sha256:768be47946cafc36d6fbe3988a04229521f5433bc038736739204e2ed258f6a7
     governs:
       - claude-code.instruction-discovery
       - claude-code.imports
@@ -61,10 +61,10 @@ sources:
     authority: official
     url: https://code.claude.com/docs/en/skills.md
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:8552fefb7d225fcdc1c4098f6a33616d6a55e63206b9d84f0522c7411d0c4c41
+    content_digest: sha256:d7efdac51e999defb3df6adb0b0a7fe148c92b66106e7cdff1a57b236bc84dab
     governs:
       - claude-code.skill-discovery
       - claude-code.explicit-only-invocation
@@ -72,20 +72,20 @@ sources:
     authority: official
     url: https://code.claude.com/docs/en/hooks-guide.md
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:e388b1bb4c83d9773396a13ad0c70978b562ea40aefd297045475bbe5e7af41c
+    content_digest: sha256:23c91d7cbe6086c6bd5c789554cfef6649785fafe71f1fadc510f3572994a083
     governs:
       - claude-code.hooks
   - id: google-antigravity-cli
     authority: official
     url: https://antigravity.google/docs/cli/reference
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:aca0b66ce4b24912f9614e50d4861a2dadce7baec0a1e7bdc0f5cf69b5d6c17e
+    content_digest: sha256:9559fdda0825fd257becf753dbb02f8ea2f02e636651528d12aa5d9cea6efacd
     governs:
       - antigravity-cli.identity
       - antigravity-cli.instruction-discovery
@@ -93,20 +93,20 @@ sources:
     authority: official
     url: https://antigravity.google/docs/skills?app=antigravity-ide
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:e388a0390f1fe6e606e2fca972b4101711996e9e4df79ad6079b4a88cfa73ba5
+    content_digest: sha256:8d889df427718a4e277ba95e1c85ea5461657066c74138d5586a2ff9f420625d
     governs:
       - antigravity-cli.skill-discovery
   - id: google-antigravity-plugins
     authority: official
     url: https://antigravity.google/docs/cli/plugins
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:3df5110bc91d9a8b9cc3eaf5bdc6f2d0ec75df5b5c024a29ca86ef926a62aa53
+    content_digest: sha256:edda04ad5d42b687951866b7a49d80f05a719a5a404b8cf343ee3b75d7ad1575
     governs:
       - antigravity-cli.plugin-layout
       - antigravity-cli.hooks
@@ -115,30 +115,30 @@ sources:
     authority: official
     url: https://opencode.ai/docs/rules/
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:c24dff71b129995933bdc94f4f393612355709c61e475b95162f5f973614e564
+    content_digest: sha256:d30240afc9c4c60b096a85a3326a8193f3d51959c8085c79c0a684518f557b9a
     governs:
       - opencode.instruction-discovery
   - id: opencode-skills
     authority: official
     url: https://opencode.ai/docs/skills/
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:ff610a25120b3197763a2c14ffbdf24918a0de0302b6f7fdb27406cb339ddea3
+    content_digest: sha256:2489d670e373926ffc2f77eb54a6703cb27566f985a64990d1cb04eab2794c23
     governs:
       - opencode.skill-discovery
   - id: pi-context-and-cli
     authority: official
     url: https://pi.dev/docs/latest/usage
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:588896ba21944ff002d637444edc22698fd24959c59fe25f95010b9707b47d92
+    content_digest: sha256:6dfe7446c81d601d5ebef5769523115229f802da364fe90fcdf96e322ae9fbcd
     governs:
       - pi.instruction-discovery
       - pi.runtime-detection
@@ -146,10 +146,10 @@ sources:
     authority: official
     url: https://pi.dev/docs/latest/skills
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:e44738f2de44436b1ef56ab64231116fdc68a451213b96b27a5338d6296176c7
+    content_digest: sha256:5b9805525b194474ef1fe5455a0917ef15ed7f710aa9bec2eee11879556469e5
     governs:
       - pi.skill-discovery
       - pi.explicit-only-invocation
@@ -157,8 +157,8 @@ sources:
     authority: official
     url: https://cursor.com/docs/cli/overview
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:c56ae1d766654ca892b2cfb513a2f7f5ef0082f107d225fb4319fa9f20109e85
     governs:
@@ -170,8 +170,8 @@ sources:
     authority: official
     url: https://docs.x.ai/build/features/project-rules
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:1077d4bf3497f8c2a9022d82c251876e091f621e98f85e0b1c4eb1d5fceab383
     governs:
@@ -180,8 +180,8 @@ sources:
     authority: official
     url: https://docs.x.ai/build/features/skills-plugins-marketplaces
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:8a43a3409c751c943b4c9aaba199adf9938e8ea00663cd3a134c815e0970d6ac
     governs:
@@ -190,10 +190,10 @@ sources:
     authority: official
     url: https://agentskills.io/specification
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current
-    content_digest: sha256:2b1dbb4fd80c31748d15812c4ebd3e66c09383d0c792801f617718684489e40d
+    content_digest: sha256:4c649bdf0e0a51c9e215d9f91009ecdca05ee9d073edb6f37c20265bbd829e11
     governs:
       - skills.portable-format
       - skills.progressive-disclosure
@@ -201,8 +201,8 @@ sources:
     authority: official
     url: https://agentskills.io/skill-creation/best-practices
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current
     content_digest: sha256:8e78d596cf2b24eadcfea8e7a67dbf7b2a0f70953942849b8872664f9d69d836
     governs:
@@ -213,10 +213,10 @@ sources:
     authority: official
     url: https://go.dev/doc/devel/release
     volatility: medium
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-release-builder-pinned
-    content_digest: sha256:10fa2f83a0e37e1663172a96f102f59ce40f02506d89e3a6f08c5a2d1c63a0af
+    content_digest: sha256:640388567ddc4442288c4c57a29c693cc5bf6c5a0296cf710040c4ca9c022565
     governs:
       - go.supported-releases
       - go.release-builder
@@ -224,20 +224,20 @@ sources:
     authority: official
     url: https://go.dev/doc/go1.27
     volatility: low
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current
-    content_digest: sha256:2de75a072079c47b0b21c39c398654bcf33c4cecec7bd873ac7c1561778252d9
+    content_digest: sha256:96489916c8cd09e81614aabac62e7d2acc0f97c30e7238dac1c9316c4a1cd94b
     governs:
       - go.module-language-baseline
   - id: go-2026-4970
     authority: official-vulnerability-database
     url: https://pkg.go.dev/vuln/GO-2026-4970
     volatility: critical
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: mitigated-by-release-builder
-    content_digest: sha256:d14e0a07daf13a0041ab42f8897ff780ceefbe922af13f1b590be086c947d925
+    content_digest: sha256:3a74b92a1934bd2d6c5aa159e154d381333a57c5389356db0b2f910f3f970a34
     governs:
       - go.release-builder
       - security.path-boundary
@@ -245,10 +245,10 @@ sources:
     authority: official-vulnerability-database
     url: https://pkg.go.dev/vuln/GO-2026-5856
     volatility: critical
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: mitigated-by-release-builder
-    content_digest: sha256:9ecb7d89ac997ef1081f371d9436ab1e4eeea2600200da8f375d9d50cbc7bbe2
+    content_digest: sha256:37ba50d5ba8c119b707585ad816e00f49c1ca29a6d18c140f2e04e953af7b620
     governs:
       - go.release-builder
       - security.transport
@@ -256,10 +256,10 @@ sources:
     authority: official-vulnerability-database
     url: https://pkg.go.dev/vuln/GO-2026-6218
     volatility: critical
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: mitigated-by-release-builder
-    content_digest: sha256:562a782df99650901ed8a3f437ca0ccb3a2386dc540ade3c59abd7b1a58ed8b5
+    content_digest: sha256:b41d193ca9ebd83cf2138a23eb20795bb0a3748abb951261388c5f4ef90c643e
     governs:
       - go.release-builder
       - security.path-boundary
@@ -267,18 +267,18 @@ sources:
     authority: official-package-index
     url: https://pypi.org/project/pytest/
     volatility: medium
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current
-    content_digest: sha256:63d989d97e552a1f6097496dc825dd0457f486a8cc1800830137af7f04dfd8a4
+    content_digest: sha256:65e36de6d84c0c3461a83f41941873038744aedeb43c87d141c61a35fad25336
     governs:
       - python.test-runner
   - id: cobra-releases
     authority: official-source-repository
     url: https://github.com/spf13/cobra/releases.atom
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current
     content_digest: sha256:11f342f54fb7fe10d87b290f547fbc486beb2df84c60708c581f51acbca828b9
     governs:
@@ -287,8 +287,8 @@ sources:
     authority: official-source-repository
     url: https://github.com/santhosh-tekuri/jsonschema/releases.atom
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current
     content_digest: sha256:2e804ccd599ce8983977d292b52d13e65758ae744a87b53d6c07a25535c72eb6
     governs:
@@ -297,8 +297,8 @@ sources:
     authority: official-source-repository
     url: https://github.com/yaml/go-yaml/tags.atom
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: pre-release
     content_digest: sha256:0ea54a6a0e660ff774ad58acba76168409d645d3953a65296976a296f8a0e05d
     governs:
@@ -308,10 +308,10 @@ sources:
     authority: official-package-documentation
     url: https://pkg.go.dev/modernc.org/sqlite
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: selected-local-state-driver
-    content_digest: sha256:bae82ecaa803504449943cfcada93b5bc661f03d040894310ba864ff48b58a73
+    content_digest: sha256:3c6689caf76edaa614583541b9954586d638a0818a843c2c01ad09831d6ed798
     governs:
       - state.sqlite-driver
       - state.cgo-free-build
@@ -319,8 +319,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/about-the-rest-api/api-versions
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:c8e40bd4bbeb96fc37c3366eb466b9071a9bf7bfe02025a0f58af1208360f2a9
     governs:
@@ -330,8 +330,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app-installation
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:4466447484a8364f0b5e4272c9d5be9aed88862944bd38d8596f93f0babe8763
     governs:
@@ -341,18 +341,18 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/apps/installations
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:0c49e07b84c092f9d8325252feab68d0d950ea36375695c52a29cc146558fc40
+    content_digest: sha256:a8d0ba061862b55f96b1c4b2de34e5cc9fa35399e82ae558ae022e2880d8f083
     governs:
       - github.installation-discovery
   - id: github-repository-metadata
     authority: official
     url: https://docs.github.com/en/rest/repos/repos?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:a53d404d83b90a79de207067fba2d18f9b316ab527326f98ef5cc16c11021c23
     governs:
@@ -364,20 +364,20 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/repos/rules?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:6269b409dfb5dba426c5c72c4dd33656b513ab477250fbe8d83c5b929afb7ea4
+    content_digest: sha256:1a1d6417d6d05605e090f9bc53b76ba4be20b3851e6243cf074887f271872f42
     governs:
       - github.repository-rulesets
   - id: github-actions-permissions
     authority: official
     url: https://docs.github.com/en/rest/actions/permissions?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:68c489fd983bc0dafeca295108590825b611c849fd26cf458f728e03ac4a0c65
+    content_digest: sha256:b676d221faf927f180f0b6caa60cad19193c226a6a056c6f46fbddc73c8c1b1a
     governs:
       - github.repository-actions-policy
       - github.workflow-token-policy
@@ -385,20 +385,20 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/checks/runs?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:1e43fb9d855d41ceaefd0ad110d9cc1b4cd378ab3e6e3fb098649bbb6f083d66
+    content_digest: sha256:6fca3b940ae697b3ef7b6c8ce4ec7b278021f33ef9d8dc26eef2ec71a5ad3c32
     governs:
       - github.check-status-observation
   - id: github-pull-requests
     authority: official
     url: https://docs.github.com/en/rest/pulls/pulls?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:833e79c758af0ae0fe0c77a4cdf83f34aec7c74b276f1d1d2420970f957ced98
+    content_digest: sha256:04c329fcd21a7a7bf460d05d6672f8cbdb6c9febb6fae5deb504caf0eff946bb
     governs:
       - github.pull-request-observation
       - github.pull-request-mutation
@@ -406,8 +406,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/repos/contents?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:099f0886f2ddd136fd69afb2395dd6b42cde1e36e123ad088d3274cb363f5bb7
     governs:
@@ -417,8 +417,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/git/refs?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:1e6aee928c80afdc4662ab5c433c3876aa9fa7a2a828a29a3f42cd4666419c71
     governs:
@@ -427,18 +427,18 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/commits/commits?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:1e47cad3f1df34aa4b38151fe95e6d60df66ba6dbe7605f5067a0accb6a1f4a4
+    content_digest: sha256:28c86d62de275b2b024e289d1523dce6205edbec91efe231146d671fff6320ec
     governs:
       - github.pull-request-change-set-observation
   - id: github-repository-custom-properties
     authority: official
     url: https://docs.github.com/en/rest/repos/custom-properties?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:13abd6d714cbc1b056d28b449c19b4a55e33194621889e193bd820fa28a780e1
     governs:
@@ -447,10 +447,10 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:97f2f169fc98314ad6a0de057f9f95bd3c3d0cddfcfb4fefe553bd0bfc330ff3
+    content_digest: sha256:95b5ebcc5b3d35bc80a48c957c8937684be365005d64cd7573da722d00facf8b
     governs:
       - github.primary-rate-limit
       - github.secondary-rate-limit
@@ -459,8 +459,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api
     volatility: medium
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current
     content_digest: sha256:531f02a4b4b1e6741d99373255b4895d2001fdbce9ebf41278ccbe8af6c53658
     governs:
@@ -469,8 +469,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webhooks
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:230868edc79e3f7e7ded0d777368f2b8dee4523dd0d2c4b144405e295db33688
     governs:
@@ -481,10 +481,10 @@ sources:
     authority: official
     url: https://docs.github.com/en/webhooks/webhook-events-and-payloads
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:34ba333da24fc389f2c04bf540878c91e744ca223661b40613a680a10456e6e6
+    content_digest: sha256:09c08ed9ebaf06c10d904428e58c6c8a9f64c0a1df962f77d674ec35204ba855
     governs:
       - github.webhook-event-allowlist
       - github.webhook-governance-events
@@ -492,8 +492,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-private-plan-not-proven
     content_digest: sha256:92a4dd79ae290785e5d7b923103dfe576dc42ce8e5e4945add4b4f18731701e8
     governs:
@@ -504,10 +504,10 @@ sources:
     authority: official
     url: https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/verify-attestations-offline
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
-    content_digest: sha256:552c8826aa44b2201b34ea3ec127696d336b372fe49c59da8139c5beaa001bca
+    content_digest: sha256:796366cd970deb233b6042e7fbf32486e85b9ffaae43922d58dd2b6a9c85219a
     governs:
       - bundle.offline-attestation-bundle
       - bundle.offline-trusted-root
@@ -516,8 +516,8 @@ sources:
     authority: official-source-repository
     url: https://github.com/cli/cli/releases/download/v2.100.0/gh_2.100.0_checksums.txt
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: release-checksums-verified-runtime-not-proven
     content_digest: sha256:6b5916dffcfa6f593b1db7890f2ddc485318e99fa263acf73aa28ebb877b53cd
     governs:
@@ -528,8 +528,8 @@ sources:
     authority: official-source-repository
     url: https://github.com/actions/attest/releases.atom
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: source-verified
     content_digest: sha256:80ada36d410382545fe1eca25ebcca37d18945b7c530f90f4a14f290ea3d95bd
     governs:
@@ -538,8 +538,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/actions/reference/workflows-and-actions/variables
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-not-proven
     content_digest: sha256:2d729035c6949fcaa4e4d84ed9f500dff2a6f71f5d00cca48af141e3e693c844
     governs:
@@ -548,8 +548,8 @@ sources:
     authority: official-source-repository
     url: https://github.com/actions/checkout/releases.atom
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: source-verified
     content_digest: sha256:52ac445486661cac338c9c78b492c453ddb03384b5e361f443b844155d68210a
     governs:
@@ -558,30 +558,30 @@ sources:
     authority: official-source-repository
     url: https://github.com/actions/setup-go/releases.atom
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: source-verified
-    content_digest: sha256:a659cfd6ef930ba17dc529b4c9962de7a791e2fa4fe1d17b22e3fd1fbe482922
+    content_digest: sha256:6e505cbdb51d8d6f3d49037284e518c3fbc64ff8f5a36f4f74c721c23c8139f9
     governs:
       - bundle.setup-go-action-pin
   - id: actions-upload-artifact-release
     authority: official-source-repository
     url: https://github.com/actions/upload-artifact/releases.atom
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: source-verified
-    content_digest: sha256:7ecf438a606b0e09018d48a1e5f5f69f29936d9ddb0907308c98da01116b909f
+    content_digest: sha256:d8cdf827616beb5f945e982a5c1ebb7c35427d1e8a7d7c27be9d0f7cd3275020
     governs:
       - bundle.upload-action-pin
   - id: go-build-reproducibility
     authority: official-package-documentation
     url: https://pkg.go.dev/cmd/go
     volatility: medium
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current
-    content_digest: sha256:1315667b643280e4a1e5b9b04c8ef5aff70a7667422b0586bfeb4300f82a1246
+    content_digest: sha256:786e14056b2551d5d718664cb1cda8d3e5c05a3e0a44e71063b004003bf6a3f5
     governs:
       - bundle.go-build-flags
       - bundle.go-build-environment
@@ -589,8 +589,8 @@ sources:
     authority: official
     url: https://docs.github.com/en/rest/repos/repos?apiVersion=2026-03-10
     volatility: high
-    verified_at: "2026-09-12"
-    next_review: "2026-10-12"
+    verified_at: "2026-10-16"
+    next_review: "2026-11-15"
     status: current-docs-verified-runtime-observed
     content_digest: sha256:a53d404d83b90a79de207067fba2d18f9b316ab527326f98ef5cc16c11021c23
     governs:
