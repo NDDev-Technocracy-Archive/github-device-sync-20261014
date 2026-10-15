@@ -4,6 +4,11 @@ Status: Accepted
 
 Supersedes: the reusable-module dual-placement clause in ADR 0018
 
+Superseded in part by: ADR 0042 (the standalone-development declaration: a
+consumed module may now declare `development: standalone`, making its
+standalone checkout audited intent rather than an embedded-only violation;
+the undeclared case remains governed by this ADR)
+
 Date: 2026-07-26
 
 ## Context

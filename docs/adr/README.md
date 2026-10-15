@@ -22,7 +22,7 @@ clause stops being normative.
 | [0030](0030-solo-owner-merges-without-human-review.md) | Let the sole owner's agent merge and clean up without a second reviewer | Accepted | — | — |
 | [0029](0029-harness-applications-are-out-of-estate-scope.md) | Keep harness application versions out of estate scope | Accepted | — | — |
 | [0028](0028-servers-are-a-first-class-portfolio-entity.md) | Make servers a first-class portfolio entity | Accepted | — | ADR 0040 (in part) |
-| [0027](0027-submodule-repositories-have-no-standalone-checkout.md) | Give a submodule-consumed repository no standalone checkout | Accepted | ADR 0018 | — |
+| [0027](0027-submodule-repositories-have-no-standalone-checkout.md) | Give a submodule-consumed repository no standalone checkout | Accepted | ADR 0018 | ADR 0042 (in part) |
 | [0026](0026-flat-servers-workspace-root.md) | Place every server checkout in one flat servers workspace root | Accepted | ADR 0025 | ADR 0032, ADR 0040 (in part) |
 | [0025](0025-out-of-estate-external-workspace-root.md) | Keep third-party collaboration checkouts in an out-of-estate external root | Accepted | — | ADR 0026 (in part) |
 | [0024](0024-device-local-estate-registration.md) | Resolve the control plane through a device-local estate registration | Accepted | — | — |
