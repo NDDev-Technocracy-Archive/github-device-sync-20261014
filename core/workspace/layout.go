@@ -80,7 +80,7 @@ func AuditLayout(
 			// ADR 0027: a consumed submodule has no standalone checkout, so an
 			// observed one is a defect regardless of what a selector would place.
 			if finding := EmbeddedOnlyFinding(
-				entry.RepositoryID, EmbeddedConsumers(anchors, entry.RepositoryID),
+				repository.Anchor, EmbeddedConsumers(anchors, entry.RepositoryID),
 			); finding != nil {
 				entry.Status = LayoutStatusInvalid
 				report.Invalid++

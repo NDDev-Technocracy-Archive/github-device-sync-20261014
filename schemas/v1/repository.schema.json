@@ -493,6 +493,13 @@
               ]
             }
           }
+        },
+        "development": {
+          "description": "Where working changes for this module are made. `embedded` (or the omitted default) keeps the ADR 0027 contract: development happens inside the consuming superproject checkout and the repository has no standalone checkout. `standalone` (ADR 0042) declares the repository is developed in its own checkout on a device while consumers pin it through gitlinks.",
+          "enum": [
+            "embedded",
+            "standalone"
+          ]
         }
       }
     },

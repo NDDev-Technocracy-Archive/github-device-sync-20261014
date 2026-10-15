@@ -22,6 +22,12 @@ func moduleAnchor(id string) domain.RepositoryAnchor {
 	return anchor
 }
 
+func standaloneModuleAnchor(id string) domain.RepositoryAnchor {
+	anchor := moduleAnchor(id)
+	anchor.Module = &domain.ModulePolicy{Development: "standalone"}
+	return anchor
+}
+
 func TestEmbeddedConsumersReportsIncomingSubmoduleEdge(t *testing.T) {
 	anchors := []domain.RepositoryAnchor{
 		consumerAnchor("repo_super", "repo_module", "modules/ci-workflows"),
@@ -35,7 +41,7 @@ func TestEmbeddedConsumersReportsIncomingSubmoduleEdge(t *testing.T) {
 		consumers[0].GitmodulesName != "modules/ci-workflows" {
 		t.Fatalf("unexpected consumer: %+v", consumers[0])
 	}
-	finding := EmbeddedOnlyFinding("repo_module", consumers)
+	finding := EmbeddedOnlyFinding(moduleAnchor("repo_module"), consumers)
 	if finding == nil || finding.Code != "GDS_WORKSPACE_EMBEDDED_ONLY" {
 		t.Fatalf("expected GDS_WORKSPACE_EMBEDDED_ONLY, got %+v", finding)
 	}
@@ -48,7 +54,7 @@ func TestEmbeddedConsumersIgnoresModuleRoleWithoutConsumer(t *testing.T) {
 	if consumers := EmbeddedConsumers(anchors, "repo_module"); len(consumers) != 0 {
 		t.Fatalf("expected no consumers, got %+v", consumers)
 	}
-	if finding := EmbeddedOnlyFinding("repo_module", nil); finding != nil {
+	if finding := EmbeddedOnlyFinding(moduleAnchor("repo_module"), nil); finding != nil {
 		t.Fatalf("expected no finding, got %+v", finding)
 	}
 }
@@ -103,5 +109,87 @@ func TestAuditLayoutRefusesStandaloneEmbeddedOnlyCheckout(t *testing.T) {
 	}
 	if report.Invalid == 0 {
 		t.Fatalf("expected the embedded-only checkout to count as invalid")
+	}
+}
+
+func TestAuditLayoutAllowsDeclaredStandaloneDevelopmentCheckout(t *testing.T) {
+	// ADR 0042: a module developed in its own checkout keeps that checkout
+	// beside its consumers' embedded gitlinks; both placements are legal.
+	descriptor := DeviceDescriptor{}
+	descriptor.Device.ID = "device_test"
+	descriptor.WorkspaceRoots = map[string]string{"nddev": "${HOME}/Developer/nddev"}
+	descriptor.Materialization = MaterializationPolicy{
+		DefaultMode: "absent",
+		Include: []MaterializationAssignment{{
+			Selector: "portfolio:organization-projects", WorkspaceRoot: "nddev", Mode: "active",
+		}},
+	}
+	descriptor.State.Path = "${XDG_STATE_HOME}/gds"
+
+	module := standaloneModuleAnchor("repo_module")
+	module.Provider.Name = "ci-workflows"
+	module.Classification.Portfolios = []string{"portfolio:organization-projects"}
+
+	report, findings := AuditLayout(
+		descriptor,
+		Environment{Home: "/srv/device", XDGStateHome: "/srv/device/.local/state"},
+		[]LayoutRepository{
+			{Path: "/srv/device/Developer/control-plane/github-device-sync",
+				Anchor: consumerAnchor("repo_super", "repo_module", "modules/ci-workflows")},
+			{Path: "/srv/device/Developer/nddev/ci-workflows", Anchor: module},
+		},
+	)
+	for _, finding := range findings {
+		if finding.Code == "GDS_WORKSPACE_EMBEDDED_ONLY" {
+			t.Fatalf("standalone development checkout must not be embedded-only: %+v", finding)
+		}
+	}
+	var moduleEntry *LayoutEntry
+	for i := range report.Entries {
+		if report.Entries[i].RepositoryID == "repo_module" {
+			moduleEntry = &report.Entries[i]
+		}
+	}
+	if moduleEntry == nil || moduleEntry.StandaloneTarget == nil {
+		t.Fatalf("expected the standalone development checkout to resolve placement, got %+v", report.Entries)
+	}
+}
+
+func TestSuppressDeclaredDualMaterialization(t *testing.T) {
+	conflict := func(id string, first string, second string) domain.Finding {
+		return domain.Finding{
+			Code:     "GDS_IDENTITY_INDEX_ID_CONFLICT",
+			Severity: domain.SeverityHigh,
+			Evidence: map[string]any{
+				"repository_id": id, "first_path": first, "second_path": second,
+			},
+		}
+	}
+	repositories := []LayoutRepository{
+		{Path: "/srv/device/Developer/nddev/ci-workflows",
+			Anchor: standaloneModuleAnchor("repo_module")},
+		{Path: "/srv/device/Developer/control-plane/estate/modules/ci-workflows",
+			SuperprojectRoot: "/srv/device/Developer/control-plane/estate",
+			Anchor:           standaloneModuleAnchor("repo_module")},
+		{Path: "/srv/device/Developer/nddev/alpha", Anchor: moduleAnchor("repo_alpha")},
+		{Path: "/srv/device/Developer/other/alpha", Anchor: moduleAnchor("repo_alpha")},
+	}
+	findings := []domain.Finding{
+		conflict("repo_module",
+			"/srv/device/Developer/nddev/ci-workflows",
+			"/srv/device/Developer/control-plane/estate/modules/ci-workflows"),
+		conflict("repo_alpha",
+			"/srv/device/Developer/nddev/alpha", "/srv/device/Developer/other/alpha"),
+		conflict("repo_undeclared",
+			"/srv/device/Developer/nddev/x", "/srv/device/Developer/other/x"),
+	}
+	kept := SuppressDeclaredDualMaterialization(findings, repositories)
+	if len(kept) != 2 {
+		t.Fatalf("expected the declared dual-materialization conflict to be suppressed, got %+v", kept)
+	}
+	for _, finding := range kept {
+		if finding.Evidence["repository_id"] == "repo_module" {
+			t.Fatalf("declared standalone development conflict must be suppressed")
+		}
 	}
 }
