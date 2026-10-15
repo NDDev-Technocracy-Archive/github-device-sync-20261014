@@ -1,6 +1,6 @@
 module github.com/NDDev-Technocracy-Sandbox/github-device-sync
 
-go 1.27.1
+go 1.27.2
 
 require (
 	github.com/NDDev-Technocracy-Sandbox/agent-runtime v0.1.9-0.20261012185520-46cfc13f3ca0
