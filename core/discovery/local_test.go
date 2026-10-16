@@ -45,6 +45,57 @@ func TestDiscoverFindsNestedGitBoundaries(t *testing.T) {
 	}
 }
 
+func TestDiscoverSkipsIgnoredNestedBoundary(t *testing.T) {
+	t.Parallel()
+	root := t.TempDir()
+	parent := filepath.Join(root, "parent")
+	ignored := filepath.Join(parent, "build", "advisory-db")
+	kept := filepath.Join(parent, "modules", "pinned")
+	for _, path := range []string{ignored, kept} {
+		if err := os.MkdirAll(path, 0o755); err != nil {
+			t.Fatal(err)
+		}
+		if output, err := exec.Command("git", "init", "-q", path).CombinedOutput(); err != nil {
+			t.Fatalf("git init %s: %v\n%s", path, err, output)
+		}
+	}
+	if output, err := exec.Command("git", "init", "-q", parent).CombinedOutput(); err != nil {
+		t.Fatalf("git init %s: %v\n%s", parent, err, output)
+	}
+	if err := os.WriteFile(filepath.Join(parent, ".gitignore"), []byte("build/\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	discovery := newTestDiscovery(t)
+	result, err := discovery.Discover(context.Background(), root, Options{
+		MaxDepth: 8, MaxRepositories: 10, Concurrency: 2,
+	})
+	if err != nil {
+		t.Fatalf("Discover() error = %v", err)
+	}
+	paths := map[string]bool{}
+	for _, boundary := range result.Boundaries {
+		paths[boundary.Path] = true
+	}
+	if paths[ignored] {
+		t.Fatalf("ignored nested boundary must not be a workspace candidate: %#v", result.Boundaries)
+	}
+	for _, path := range []string{parent, kept} {
+		if !paths[path] {
+			t.Fatalf("boundary %s missing: %#v", path, result.Boundaries)
+		}
+	}
+	found := false
+	for _, finding := range result.Findings {
+		if finding.Code == "GDS_DISCOVERY_GENERATED_MATERIALIZATION" {
+			found = true
+		}
+	}
+	if !found {
+		t.Fatalf("generated-materialization finding missing: %#v", result.Findings)
+	}
+}
+
 func TestDiscoverCurrentRepositoryAnchor(t *testing.T) {
 	t.Parallel()
 	discovery := newTestDiscovery(t)
