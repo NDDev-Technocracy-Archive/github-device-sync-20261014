@@ -47,7 +47,12 @@ func TestDiscoverFindsNestedGitBoundaries(t *testing.T) {
 
 func TestDiscoverSkipsIgnoredNestedBoundary(t *testing.T) {
 	t.Parallel()
-	root := t.TempDir()
+	// Boundaries are reported canonicalized: on macOS t.TempDir() lives under
+	// /var, which resolves to /private/var.
+	root, err := filepath.EvalSymlinks(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
 	parent := filepath.Join(root, "parent")
 	ignored := filepath.Join(parent, "build", "advisory-db")
 	kept := filepath.Join(parent, "modules", "pinned")
