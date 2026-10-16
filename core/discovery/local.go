@@ -72,7 +72,7 @@ func (discovery *Local) Discover(
 		return Result{}, err
 	}
 	options = normalizeOptions(options)
-	candidates, findings, err := findCandidates(ctx, resolvedRoot, options)
+	candidates, findings, err := discovery.findCandidates(ctx, resolvedRoot, options)
 	if err != nil {
 		return Result{}, err
 	}
@@ -199,12 +199,13 @@ func (discovery *Local) inspect(ctx context.Context, candidate string) inspectio
 	return inspection{boundary: boundary}
 }
 
-func findCandidates(
+func (discovery *Local) findCandidates(
 	ctx context.Context,
 	root string,
 	options Options,
 ) ([]string, []domain.Finding, error) {
 	candidates := map[string]struct{}{}
+	repositoryDirs := []string{}
 	findings := []domain.Finding{}
 	err := filepath.WalkDir(root, func(path string, entry fs.DirEntry, walkErr error) error {
 		if walkErr != nil {
@@ -241,7 +242,30 @@ func findCandidates(
 		if err != nil {
 			candidate = filepath.Dir(path)
 		}
-		candidates[filepath.Clean(candidate)] = struct{}{}
+		candidate = filepath.Clean(candidate)
+		// A nested Git boundary whose path is ignored by the nearest enclosing
+		// repository is generated materialization (a vendored tool cache, a
+		// build artifact, a dependency checkout), never a workspace member:
+		// it cannot carry an anchor and auditing it as one manufactures a
+		// spurious required-anchor finding on every regenerated build. Tracked
+		// paths are exempt by check-ignore semantics, so embedded checkouts
+		// pinned by a superproject still surface.
+		if enclosing := enclosingRepository(candidate, repositoryDirs); enclosing != "" {
+			if relative, relErr := filepath.Rel(enclosing, candidate); relErr == nil {
+				ignored, ignoreErr := discovery.git.PathIgnored(ctx, enclosing, relative)
+				if ignoreErr == nil && ignored {
+					findings = append(findings, domain.Finding{
+						Code:     "GDS_DISCOVERY_GENERATED_MATERIALIZATION",
+						Severity: domain.SeverityInfo,
+						Message:  "Nested Git boundary is ignored by its enclosing repository and is not a workspace member.",
+						Evidence: map[string]any{"path": candidate, "ignored_by": enclosing},
+					})
+					return nil
+				}
+			}
+		}
+		repositoryDirs = append(repositoryDirs, candidate)
+		candidates[candidate] = struct{}{}
 		if len(candidates) > options.MaxRepositories {
 			return fmt.Errorf(
 				"repository discovery exceeded configured limit %d", options.MaxRepositories,
@@ -303,6 +327,22 @@ func pathDepth(relative string) int {
 		return 0
 	}
 	return len(strings.Split(filepath.Clean(relative), string(filepath.Separator)))
+}
+
+func enclosingRepository(candidate string, repositoryDirs []string) string {
+	enclosing := ""
+	for _, dir := range repositoryDirs {
+		if len(dir) <= len(enclosing) {
+			continue
+		}
+		relative, err := filepath.Rel(dir, candidate)
+		if err != nil || relative == "." || relative == ".." ||
+			strings.HasPrefix(relative, ".."+string(filepath.Separator)) {
+			continue
+		}
+		enclosing = dir
+	}
+	return enclosing
 }
 
 func excludedDirectory(name string) bool {

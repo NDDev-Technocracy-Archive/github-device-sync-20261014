@@ -166,10 +166,19 @@ func validateStatus(args []string) error {
 		return nil
 	}
 	prefix := []string{"status", "--porcelain=v2", "-z", "--untracked-files=all", "--"}
-	if len(args) <= len(prefix) || !equalArguments(args[:len(prefix)], prefix) {
+	ignoredPrefix := []string{
+		"status", "--porcelain=v2", "-z", "--untracked-files=all", "--ignored", "--",
+	}
+	var paths []string
+	switch {
+	case len(args) > len(prefix) && equalArguments(args[:len(prefix)], prefix):
+		paths = args[len(prefix):]
+	case len(args) > len(ignoredPrefix) && equalArguments(args[:len(ignoredPrefix)], ignoredPrefix):
+		paths = args[len(ignoredPrefix):]
+	default:
 		return errors.New("only bounded porcelain v2 status reads are allowed")
 	}
-	for _, path := range args[len(prefix):] {
+	for _, path := range paths {
 		if !safeRepositoryPath(path) {
 			return fmt.Errorf("repository path %q is outside the bounded status read", path)
 		}
