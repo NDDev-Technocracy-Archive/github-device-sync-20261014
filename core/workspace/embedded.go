@@ -105,7 +105,10 @@ func SuppressDeclaredDualMaterialization(
 	development := map[string]string{}
 	embeddedPath := map[string]bool{}
 	for _, repository := range repositories {
-		if repository.Anchor.Module != nil {
+		// The declaration is authoritative on the standalone checkout: an
+		// embedded consumer gitlink carries the module's older pinned anchor,
+		// which cannot know the newer field and must not override it.
+		if repository.Anchor.Module != nil && repository.SuperprojectRoot == "" {
 			development[repository.Anchor.Repository.ID] = repository.Anchor.Module.Development
 		}
 		if repository.SuperprojectRoot != "" {
