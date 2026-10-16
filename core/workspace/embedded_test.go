@@ -193,3 +193,36 @@ func TestSuppressDeclaredDualMaterialization(t *testing.T) {
 		}
 	}
 }
+
+func TestSuppressDeclaredDualMaterializationStaleEmbeddedPin(t *testing.T) {
+	conflict := func(id string, first string, second string) domain.Finding {
+		return domain.Finding{
+			Code:     "GDS_IDENTITY_INDEX_ID_CONFLICT",
+			Severity: domain.SeverityHigh,
+			Evidence: map[string]any{
+				"repository_id": id, "first_path": first, "second_path": second,
+			},
+		}
+	}
+	// The embedded consumer pin carries the module's older anchor, which has no
+	// development field yet; it must not clear the standalone declaration when
+	// it is inspected after the development checkout.
+	repositories := []LayoutRepository{
+		{Path: "/srv/device/Developer/nddev/ci-workflows",
+			Anchor: standaloneModuleAnchor("repo_module")},
+		{Path: "/srv/device/Developer/control-plane/estate/modules/ci-workflows",
+			SuperprojectRoot: "/srv/device/Developer/control-plane/estate",
+			Anchor: domain.RepositoryAnchor{
+				Repository: domain.RepositoryIdentity{ID: "repo_module"},
+				Module:     &domain.ModulePolicy{},
+			}},
+	}
+	findings := []domain.Finding{
+		conflict("repo_module",
+			"/srv/device/Developer/nddev/ci-workflows",
+			"/srv/device/Developer/control-plane/estate/modules/ci-workflows"),
+	}
+	if kept := SuppressDeclaredDualMaterialization(findings, repositories); len(kept) != 0 {
+		t.Fatalf("stale embedded anchor must not mask the standalone declaration, got %+v", kept)
+	}
+}
