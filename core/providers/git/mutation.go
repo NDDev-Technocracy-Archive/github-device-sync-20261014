@@ -96,6 +96,41 @@ func (runner *MutationRunner) UpdateRecoveryRef(
 	return err
 }
 
+// advanceTrackingRef moves a remote-tracking ref from expectedOldOID to newOID,
+// or deletes it when newOID is empty. Newer Git updates the remote-tracking ref
+// itself when a push targets a configured remote's URL, so a ref that already
+// holds the final value is the completed transition, not a conflict; any other
+// value still fails the compare-and-set.
+func (runner *MutationRunner) advanceTrackingRef(
+	ctx context.Context,
+	root string,
+	ref string,
+	newOID string,
+	expectedOldOID string,
+	message string,
+) error {
+	current, err := runner.run(ctx, root, map[int]struct{}{0: {}, 1: {}}, "rev-parse", "--verify", "--quiet", ref)
+	if err != nil {
+		return err
+	}
+	value := strings.TrimSpace(string(current.Stdout))
+	if newOID == "" {
+		if current.ExitCode == 1 || value == "" {
+			return nil
+		}
+		_, err = runner.run(ctx, root, map[int]struct{}{0: {}}, "update-ref", "--no-deref", "-d", ref, expectedOldOID)
+		return err
+	}
+	if current.ExitCode == 0 && value == newOID {
+		return nil
+	}
+	_, err = runner.run(
+		ctx, root, map[int]struct{}{0: {}},
+		"update-ref", "--no-deref", "-m", message, ref, newOID, expectedOldOID,
+	)
+	return err
+}
+
 func (runner *MutationRunner) run(
 	ctx context.Context,
 	directory string,
