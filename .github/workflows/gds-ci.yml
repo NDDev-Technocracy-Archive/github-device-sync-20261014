@@ -1,61 +1,65 @@
+# GENERATED FILE - DO NOT EDIT DIRECTLY
+# generator: gds
+# bundle: 0.9.7-dev
+# source-tree-digest: sha256:092daa655a0febd5486acbd764bf06e986510bacd6bd8a84f4b335c2152f3695
+# input-digest: sha256:5fb366be660eed398b5c79fb267ef95f08dcbeaa205d0c6db75128d62d5a3c63
+# output-digest: sha256:6f60454d0922fd1df7e2c0a4d93fb6f196a4da00397e1e1ada7f72987a456399
+# edit-source:
+#   - .gds/repository.yaml
+#   - policies/base/repository-default.yaml
+#   - policies/repositories/github-device-sync.yaml
+#   - policies/roles/public-module.yaml
+#   - policies/stacks/continuous-development.yaml
+#   - templates/agents/repository.md.tmpl
+#   - templates/github-actions/go.yml.tmpl
+#   - templates/harnesses/claude.md.tmpl
 name: gds-ci
 
 on:
   pull_request:
+    branches:
+      - "main"
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - "main"
 
-permissions:
-  contents: read
+permissions: {}
 
 concurrency:
-  group: gds-ci-${{ github.event.pull_request.number || github.ref }}
-  # Obsolete pull-request heads are cancelled; a running main validation always completes.
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: gds-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   fast:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 30
-    steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      with:
-        persist-credentials: false
-    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
-      with:
-        go-version: 1.27.2
-        cache: false
-    - uses: NDDev-Technocracy-Standarts/std-0004-ci-cd-workflows/.github/actions/hosted-cache@ab62f45b2a3067e5a7425d703f7fd07f1618b72c # nddev-cicd-v0.6.14
-      with:
-        ecosystems: go
-    - name: Build
-      shell: bash
-      run: |2+
+    name: GDS fast
+    permissions:
+      contents: read
+    uses: NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046
+    with:
+      fetch_depth: 0
+      # Public hosted CI uses GitHub's service cache; the pinned reusable
+      # workflow owns cache keys and invalidation, so no runner-local state is trusted.
+      cache: true
 
-    - name: Test
-      shell: bash
-      run: |
-        scripts/validate_shell.sh && scripts/validate_go_core.sh --fast
+      runner: "ubuntu-latest"
+      go_version: "1.27.2"
+      # Declared fast commands own their build scope; the complete build is below.
+      build_command: ""
+      test_command: "scripts/validate_shell.sh && scripts/validate_go_core.sh --fast"
+      timeout_minutes: 30
   pr-required:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 30
-    steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      with:
-        persist-credentials: false
-    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
-      with:
-        go-version: 1.27.2
-        cache: false
-    - uses: NDDev-Technocracy-Standarts/std-0004-ci-cd-workflows/.github/actions/hosted-cache@ab62f45b2a3067e5a7425d703f7fd07f1618b72c # nddev-cicd-v0.6.14
-      with:
-        ecosystems: go
-    - name: Build
-      shell: bash
-      run: |
-        go build -trimpath ./core/cmd/gds
-    - name: Test
-      shell: bash
-      run: |
-        go test ./... && python3 -m pip install --quiet --require-hashes -r requirements/test.txt && python3 -m pytest
+    name: GDS PR required
+    # Run the declared fast checks first. Repositories can keep this phase
+    # inexpensive and reserve their full test/build commands for this job.
+    needs: fast
+    permissions:
+      contents: read
+    uses: NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046
+    with:
+      fetch_depth: 0
+      cache: true
+      runner: "ubuntu-latest"
+      go_version: "1.27.2"
+      build_command: "go build -trimpath ./core/cmd/gds"
+      test_command: "go test ./... && python3 -m pip install --quiet --require-hashes -r requirements/test.txt && python3 -m pytest"
+      timeout_minutes: 30
