@@ -124,10 +124,8 @@ func (runner *MutationRunner) CompleteTaskBranch(
 		return report, errors.New("remote default branch integration verification failed")
 	}
 	defaultTracking := "refs/remotes/origin/" + strings.TrimPrefix(defaultBranchRef, "refs/heads/")
-	if _, err := runner.run(
-		ctx, root, map[int]struct{}{0: {}},
-		"update-ref", "--no-deref", "-m", "gds complete default",
-		defaultTracking, expectedTaskOID, expectedDefaultOID,
+	if err := runner.advanceTrackingRef(
+		ctx, root, defaultTracking, expectedTaskOID, expectedDefaultOID, "gds complete default",
 	); err != nil {
 		return report, err
 	}
@@ -164,10 +162,7 @@ func (runner *MutationRunner) CompleteTaskBranch(
 	if err != nil || remoteTask != zeroOID(len(expectedTaskOID)) {
 		return report, errors.New("remote task branch cleanup verification failed")
 	}
-	if _, err := runner.run(
-		ctx, root, map[int]struct{}{0: {}},
-		"update-ref", "--no-deref", "-d", taskTracking, expectedTaskOID,
-	); err != nil {
+	if err := runner.advanceTrackingRef(ctx, root, taskTracking, "", expectedTaskOID, ""); err != nil {
 		return report, err
 	}
 	taskName := strings.TrimPrefix(taskBranchRef, "refs/heads/")

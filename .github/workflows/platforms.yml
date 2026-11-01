@@ -1,4 +1,4 @@
-# Coverage for the shipped platforms that `ubuntu-latest` does not exercise.
+# Coverage for the shipped platforms that `ubuntu-24.04` does not exercise.
 #
 # `release-installation.schema.json` and `bundle-trust.schema.json` declare
 # `target_os: {"enum": ["darwin", "linux"]}` and
@@ -32,7 +32,7 @@ concurrency:
 
 jobs:
   platform:
-    # `macos-latest` is Apple Silicon, so it covers darwin/arm64. `ubuntu-24.04-arm`
+    # `macos-26` is Apple Silicon, so it covers darwin/arm64. `ubuntu-24.04-arm`
     # covers linux/arm64. Both are standard hosted runners and unmetered on public
     # repositories; macOS-XL and larger runners are billed even here and are not used.
     # Standard Intel macOS runners remain available as macos-15-intel. Together
@@ -47,7 +47,7 @@ jobs:
       matrix:
         include:
           - name: darwin-arm64
-            runner: macos-latest
+            runner: macos-26
           - name: linux-arm64
             runner: ubuntu-24.04-arm
           - name: darwin-amd64

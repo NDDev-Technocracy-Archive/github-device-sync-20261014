@@ -4,7 +4,7 @@ on:
   # Trusted publisher reads completed-run metadata only; source-run code and
   # artifacts are never executed. Its code is fixed by the reviewed caller/ref.
   workflow_run: # zizmor: ignore[dangerous-triggers]
-    workflows: ["codeql", "dependabot-projection-convergence", "gds-ci", "platforms", "gds-release-bundle"]
+    workflows: ["dependabot-projection-convergence", "gds-ci", "platforms", "gds-release-bundle", "security"]
     types: [completed]
 
 permissions: {}
