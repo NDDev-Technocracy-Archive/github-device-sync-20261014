@@ -47,7 +47,7 @@ ROOT=$(CDPATH='' cd -- "$SCRIPT_DIR/.." && pwd)
 SOURCE_ROOT="$ROOT"
 
 # Pinned toolchain (the security floor enforced by validate_go_core.sh).
-GO_VERSION="1.27.2"
+GO_VERSION="1.27.3"
 SDK_ROOT="${HOME}/sdk"
 GO_HOME="${SDK_ROOT}/go${GO_VERSION}"
 GDS_BIN_TARGET="${HOME}/.local/bin/gds"
