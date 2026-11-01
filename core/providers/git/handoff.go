@@ -397,8 +397,10 @@ func (runner *MutationRunner) updateRemoteTrackingAndUpstream(
 	if !safeRemoteTrackingRef(trackingRef) {
 		return errors.New("derived remote-tracking ref is unsafe")
 	}
-	if err := runner.advanceTrackingRef(
-		ctx, root, trackingRef, newOID, expectedRemoteOID, "gds handoff push",
+	if _, err := runner.run(
+		ctx, root, map[int]struct{}{0: {}},
+		"update-ref", "--no-deref", "-m", "gds handoff push",
+		trackingRef, newOID, expectedRemoteOID,
 	); err != nil {
 		return err
 	}
