@@ -16,7 +16,7 @@ import (
 )
 
 func TestGenerateRepositoryProjectionDeterministically(t *testing.T) {
-	generator, anchor, policy, bundle := controlPlaneInputs(t)
+	generator, anchor, policy, bundle := reusableCallerInputs(t)
 	first, findings := generator.Generate(anchor, policy, bundle)
 	if len(findings) != 0 {
 		t.Fatalf("findings = %#v", findings)
@@ -334,7 +334,7 @@ func TestDevelopmentSourceLayoutKeepsStandaloneEngineBoundary(t *testing.T) {
 }
 
 func TestGeneratedAgentsFalsePreservesRepositoryOwnedInstructions(t *testing.T) {
-	generator, anchor, policy, bundle := controlPlaneInputs(t)
+	generator, anchor, policy, bundle := reusableCallerInputs(t)
 	anchor.Agent.GeneratedAgents = false
 	candidate, findings := generator.Generate(anchor, policy, bundle)
 	if len(findings) != 0 {
@@ -373,7 +373,7 @@ func TestGeneratedAgentsFalsePreservesRepositoryOwnedInstructions(t *testing.T) 
 }
 
 func TestGoWorkflowValidatorRejectsUnsafeContractChanges(t *testing.T) {
-	generator, anchor, policy, bundle := controlPlaneInputs(t)
+	generator, anchor, policy, bundle := reusableCallerInputs(t)
 	candidate, findings := generator.Generate(anchor, policy, bundle)
 	if len(findings) != 0 {
 		t.Fatalf("findings = %#v", findings)
@@ -449,6 +449,52 @@ func controlPlaneInputs(
 	return generator, anchor, compiled.Document, bundle
 }
 
+// fixtureWorkflowRef is a pinned reusable workflow that exists only in tests.
+// The control plane owns its CI workflow outright, so its anchor declares no
+// ci.workflow_ref; the reusable-caller contract is exercised against this
+// fixture instead of a live library that can be retired.
+const fixtureWorkflowRef = "example/ci-workflows/.github/workflows/go-ci.yml@0123456789abcdef0123456789abcdef01234567"
+
+// reusableCallerInputs returns the control-plane inputs with a reusable
+// workflow declared, which is what makes the generator manage gds-ci.yml.
+func reusableCallerInputs(
+	t *testing.T,
+) (*Generator, domain.RepositoryAnchor, compiler.CompiledPolicyDocument, Bundle) {
+	t.Helper()
+	generator, anchor, policy, bundle := controlPlaneInputs(t)
+	if anchor.CI == nil {
+		t.Fatal("control-plane anchor declares no CI policy")
+	}
+	anchor.CI.WorkflowRef = fixtureWorkflowRef
+	return generator, anchor, policy, bundle
+}
+
+func TestControlPlaneOwnsItsCIWorkflow(t *testing.T) {
+	generator, anchor, policy, bundle := controlPlaneInputs(t)
+	candidate, findings := generator.Generate(anchor, policy, bundle)
+	if len(findings) != 0 {
+		t.Fatalf("findings = %#v", findings)
+	}
+	for _, file := range candidate.Files {
+		if file.Path == goCIOutputPath {
+			t.Fatalf("control plane generated a reusable caller for its own CI: %#v", candidate.Files)
+		}
+	}
+}
+
+func TestVersionedHostedImagesAreGitHubHosted(t *testing.T) {
+	for _, label := range []string{"ubuntu-latest", "ubuntu-26.04", "ubuntu-24.04-arm", "macos-15", "windows-2025"} {
+		if !githubHostedRunner(label) {
+			t.Errorf("%s is GitHub-hosted", label)
+		}
+	}
+	for _, label := range []string{"nddev-linux", "nddev-linux-standart", "self-hosted", "blacksmith-4vcpu-ubuntu-2404", ""} {
+		if githubHostedRunner(label) {
+			t.Errorf("%s is not GitHub-hosted", label)
+		}
+	}
+}
+
 func candidateFile(t *testing.T, candidate Candidate, path string) File {
 	t.Helper()
 	for _, file := range candidate.Files {
@@ -511,7 +557,7 @@ func projectionRepositoryRoot(t *testing.T) string {
 }
 
 func TestAdvisoryDeliveryGuidanceDoesNotAlterWorkflowResults(t *testing.T) {
-	generator, anchor, policy, bundle := controlPlaneInputs(t)
+	generator, anchor, policy, bundle := reusableCallerInputs(t)
 	baseline, findings := generator.Generate(anchor, policy, bundle)
 	if len(findings) != 0 {
 		t.Fatal(findings)
@@ -535,7 +581,7 @@ func TestAdvisoryDeliveryGuidanceDoesNotAlterWorkflowResults(t *testing.T) {
 }
 
 func TestGoCallerHonorsFastCommandsWithoutRepeatingBroadTests(t *testing.T) {
-	generator, anchor, policy, bundle := controlPlaneInputs(t)
+	generator, anchor, policy, bundle := reusableCallerInputs(t)
 	anchor.CI.TestCommand = "go test ./..."
 	anchor.Verification.Commands.Fast = []string{"go vet ./...", "scripts/check-format.sh"}
 	anchor.Verification.Commands.PRRequired = []string{"go test ./..."}

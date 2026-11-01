@@ -12,6 +12,17 @@ import (
 
 var fullWorkflowSHA = regexp.MustCompile(`(?m)^\s*uses:\s*[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/\.github/workflows/[A-Za-z0-9_.-]+@[0-9a-f]{40}\s*$`)
 
+// standardGitHubHostedRunner matches the GitHub-hosted labels: the floating
+// "-latest" aliases and the versioned images such as ubuntu-26.04. Matching
+// only the "-latest" suffix treated a pinned hosted image as estate hardware,
+// which refused it on a public repository and disabled the hosted cache.
+var standardGitHubHostedRunner = regexp.MustCompile(`^(ubuntu|macos|windows)-(latest|[0-9][A-Za-z0-9.-]*)$`)
+
+// githubHostedRunner reports whether a declared runner label is GitHub-hosted.
+func githubHostedRunner(label string) bool {
+	return standardGitHubHostedRunner.MatchString(label)
+}
+
 func validateGoWorkflowCaller(content []byte, anchor domain.RepositoryAnchor) error {
 	if anchor.CI == nil || anchor.CI.Profile != "go" || anchor.CI.GoVersion == "" ||
 		anchor.CI.BuildCommand == "" || anchor.CI.TestCommand == "" ||
@@ -25,7 +36,7 @@ func validateGoWorkflowCaller(content []byte, anchor domain.RepositoryAnchor) er
 	// generated caller may name. GitHub-hosted labels are the only ones a public
 	// repository may use, and the runner groups enforce the same rule
 	// server-side; this refuses to generate the file in the first place.
-	if anchor.CI.Runner != "" && !strings.HasSuffix(anchor.CI.Runner, "-latest") &&
+	if anchor.CI.Runner != "" && !githubHostedRunner(anchor.CI.Runner) &&
 		anchor.Classification.VisibilityContract != "private" {
 		return fmt.Errorf(
 			"runner %q is not GitHub-hosted and this repository's visibility contract is %q; "+
@@ -38,7 +49,7 @@ func validateGoWorkflowCaller(content []byte, anchor domain.RepositoryAnchor) er
 	fullHistoryCount := strings.Count(text, "fetch_depth: 0")
 	cacheDisabledCount := strings.Count(text, "cache: false")
 	cacheEnabledCount := strings.Count(text, "cache: true")
-	hostedRunner := strings.HasSuffix(anchor.CI.Runner, "-latest")
+	hostedRunner := githubHostedRunner(ciRunner(anchor.CI))
 	for _, forbidden := range []string{
 		"pull_request_target:", "secrets: inherit", "permissions: write-all",
 		"@main", "@master", "@v1", "@latest",

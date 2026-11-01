@@ -644,7 +644,7 @@ func projectionTemplateData(
 		TimeoutMinutes:           ciInt(anchor.CI, func(value *domain.CIPolicy) int { return value.TimeoutMinutes }),
 		WorkflowRef:              ciString(anchor.CI, func(value *domain.CIPolicy) string { return value.WorkflowRef }),
 		Runner:                   ciRunner(anchor.CI),
-		CacheEnabled:             strings.HasSuffix(ciRunner(anchor.CI), "-latest"),
+		CacheEnabled:             githubHostedRunner(ciRunner(anchor.CI)),
 		GitHubWorkflowExpression: "${{ github.workflow }}",
 		GitHubRefExpression:      "${{ github.ref }}",
 	}

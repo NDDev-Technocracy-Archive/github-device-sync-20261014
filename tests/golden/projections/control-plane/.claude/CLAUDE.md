@@ -3,7 +3,7 @@ GENERATED FILE - DO NOT EDIT DIRECTLY
 generator: gds
 bundle: 0.9.7-dev
 source-tree-digest: sha256:0000000000000000000000000000000000000000000000000000000000000001
-input-digest: sha256:a3ea6236d8c4f57b4cf68f89daf049c79b5bbff191a0fc81d79300d864782f75
+input-digest: sha256:0c2f693d5dc7613ea0ec60ead71e22dbbb3febde2333cdd211bb8de508d2d951
 output-digest: sha256:88cb57297d8d713287872a8afaca8d42f7146ecf7a091e4996e65eee8f962665
 edit-source:
   - .gds/repository.yaml

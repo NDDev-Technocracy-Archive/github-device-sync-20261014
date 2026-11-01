@@ -59,7 +59,6 @@ func TestResolveAppliedPolicyRejectsTamperedLockedProjection(t *testing.T) {
 		".gds/bundle.lock.yaml",
 		".gds/compiled-policy.json",
 		".claude/CLAUDE.md",
-		".github/workflows/gds-ci.yml",
 		"AGENTS.md",
 	} {
 		source := filepath.Join(sourceRoot, filepath.FromSlash(relative))
@@ -488,7 +487,6 @@ func copyContextFixture(t *testing.T, sourceRoot string, targetRoot string) {
 		".gds/bundle.lock.yaml",
 		".gds/compiled-policy.json",
 		".claude/CLAUDE.md",
-		".github/workflows/gds-ci.yml",
 		"AGENTS.md",
 	} {
 		contentRoot := sourceRoot

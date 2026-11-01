@@ -171,7 +171,9 @@ func TestGenerateRepositoryReturnsCandidateWithoutMutation(t *testing.T) {
 		t.Fatalf("candidate = %#v", data)
 	}
 	files, ok := candidate["files"].([]any)
-	if !ok || len(files) != 3 {
+	// Bundle lock and compiled policy; the control plane owns its CI workflow,
+	// so no reusable-workflow caller is generated.
+	if !ok || len(files) != 2 {
 		t.Fatalf("candidate files = %#v", candidate["files"])
 	}
 	if envelope.Mutation.Attempted || envelope.Mutation.Completed {
