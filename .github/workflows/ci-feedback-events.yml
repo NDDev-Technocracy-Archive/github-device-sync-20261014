@@ -2,7 +2,7 @@ name: CI feedback
 
 on:
   # Trusted publisher reads completed-run metadata only; source-run code and
-  # artifacts are never executed. Its code is fixed by the reviewed caller/ref.
+  # artifacts are never executed. Its code is fixed by the pinned library action.
   workflow_run: # zizmor: ignore[dangerous-triggers]
     workflows: ["dependabot-projection-convergence", "gds-ci", "platforms", "gds-release-bundle", "security"]
     types: [completed]
@@ -10,16 +10,26 @@ on:
 permissions: {}
 
 concurrency:
-  group: ci-feedback-events-${{ github.repository_id }}-${{ github.run_id }}
+  group: ci-feedback-events-${{ github.repository_id }}
   cancel-in-progress: false
 
 jobs:
   feedback:
-    if: ${{ contains(fromJSON('["failure","timed_out","action_required","stale","startup_failure","cancelled"]'), github.event.workflow_run.conclusion) }}
+    name: Bounded native failure publication
+    # The library's default conclusions and events: a run superseded by
+    # concurrency (cancelled) or a pull request failure already shows on its
+    # own check and does not open an Issue.
+    if: ${{ contains(fromJSON('["failure","timed_out","action_required","startup_failure","stale"]'), github.event.workflow_run.conclusion) }}
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
     permissions:
       actions: read # Read exact completed run and job metadata.
       issues: write # Publish bounded failure evidence in this repository.
-    uses: NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/ci-feedback.yml@581821d049ca745501e6c8e2bc10db408d0b0d95 # commit:93eeb2a65e98a29e9dbff7909f67c6419abff046
-    with:
-      run-id: ${{ format('{0}', github.event.workflow_run.id) }}
-      run-attempt: ${{ format('{0}', github.event.workflow_run.run_attempt) }}
+    steps:
+      - uses: NDDev-Technocracy-Standarts/std-0004-ci-cd-workflows/.github/actions/feedback@c192c6adcf22088abf456635de614d42e8fa3f8d # nddev-cicd-v0.6.20
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          workflows: '[".github/workflows/dependabot-projection-convergence.yml",".github/workflows/gds-ci.yml",".github/workflows/platforms.yml",".github/workflows/release-bundle.yml",".github/workflows/security.yml"]'
+          creators: '["rldyourmnd","dependabot[bot]"]'
+          run-id: ${{ format('{0}', github.event.workflow_run.id) }}

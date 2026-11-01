@@ -1,4 +1,4 @@
-"""Small wiring checks; publisher behavior belongs to its owning module."""
+"""Small wiring checks; publisher behavior belongs to the STD-0004 library."""
 import pathlib
 import json
 import re
@@ -7,51 +7,69 @@ import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CALLER = ROOT / ".github/workflows/ci-feedback-events.yml"
+LIBRARY_ACTION = "NDDev-Technocracy-Standarts/std-0004-ci-cd-workflows/.github/actions/feedback"
+
+
+def _watched():
+    """Return (workflow names, workflow paths) that the publisher must watch."""
+    names, paths = [], []
+    for path in sorted((ROOT / ".github/workflows").glob("*.yml")):
+        if path == CALLER:
+            continue
+        document = yaml.safe_load(path.read_text())
+        events = document.get("on", document.get(True))
+        if isinstance(events, str):
+            events = [events]
+        if set(events) - {"workflow_call"}:
+            names.append(document.get("name", path.name))
+            paths.append(f".github/workflows/{path.name}")
+    return names, paths
+
+
+def _step():
+    steps = yaml.safe_load(CALLER.read_text())["jobs"]["feedback"]["steps"]
+    return next(step for step in steps if step.get("uses", "").startswith(LIBRARY_ACTION + "@"))
 
 
 class FeedbackContractTests(unittest.TestCase):
-    def test_exact_completed_attempt_is_forwarded(self):
+    def test_exact_completed_run_is_forwarded(self):
         text = CALLER.read_text()
         selected = json.loads(re.search(r"workflows: (\[[^\n]+\])", text).group(1))
-        expected = []
-        for path in sorted((ROOT / ".github/workflows").glob("*.yml")):
-            if path == CALLER:
-                continue
-            document = yaml.safe_load(path.read_text())
-            events = document.get("on", document.get(True))
-            if isinstance(events, str):
-                events = [events]
-            if set(events) - {"workflow_call"}:
-                expected.append(document.get("name", path.name))
-        self.assertEqual(selected, expected)
+        names, paths = _watched()
+        self.assertEqual(selected, names)
         self.assertNotIn("CI feedback", selected)
         self.assertIn("types: [completed]", text)
-        self.assertIn("github.event.workflow_run.id", text)
-        self.assertIn("github.event.workflow_run.run_attempt", text)
-        self.assertNotIn("github.run_id", json.dumps(yaml.safe_load(text)["jobs"]["feedback"]["with"]))
+        step = _step()
+        self.assertEqual(json.loads(step["with"]["workflows"]), paths)
+        self.assertIn("github.event.workflow_run.id", step["with"]["run-id"])
+        self.assertNotIn("github.run_id", json.dumps(step["with"]))
 
-    def test_reusable_reference_is_immutable(self):
+    def test_library_reference_is_immutable(self):
         text = CALLER.read_text()
-        self.assertRegex(text, r"uses: NDDev-Technocracy-Archive/ci-workflows-20261014/\.github/workflows/ci-feedback\.yml@[0-9a-f]{40}(?: +# commit:[0-9a-f]{40})?\n")
+        self.assertRegex(
+            text,
+            r"uses: NDDev-Technocracy-Standarts/std-0004-ci-cd-workflows/\.github/actions/feedback@[0-9a-f]{40} # nddev-cicd-v\d+\.\d+\.\d+\n",
+        )
+        self.assertNotIn("ci-workflows-20261014", text)
         self.assertNotIn("@main", text)
 
     def test_no_project_execution_or_secret_inheritance(self):
         text = CALLER.read_text()
         document = yaml.safe_load(text)
+        job = document["jobs"]["feedback"]
         self.assertEqual(document["permissions"], {})
-        self.assertEqual(document["jobs"]["feedback"]["permissions"],
-                         {"actions": "read", "issues": "write"})
-        self.assertNotIn("steps", document["jobs"]["feedback"])
+        self.assertEqual(job["permissions"], {"actions": "read", "issues": "write"})
+        self.assertEqual([step.get("uses", "").split("@")[0] for step in job["steps"]], [LIBRARY_ACTION])
         self.assertNotIn("checkout", text)
-        self.assertNotIn("secrets:", text)
-        self.assertNotIn("runs-on:", text)
+        self.assertNotIn("secrets", text)
         self.assertNotIn("run:", text.replace("workflow_run:", ""))
+        self.assertEqual(_step()["env"], {"GITHUB_TOKEN": "${{ github.token }}"})
 
-    def test_cancelled_attempt_reaches_publisher_for_failed_job_inspection(self):
+    def test_failed_conclusions_reach_publisher(self):
         text = CALLER.read_text()
         condition = next(line for line in text.splitlines() if line.strip().startswith("if:"))
-        self.assertIn('"failure"', condition)
-        self.assertIn('"cancelled"', condition)
+        for conclusion in ("failure", "timed_out", "startup_failure"):
+            self.assertIn(f'"{conclusion}"', condition)
         self.assertNotIn("continue-on-error", text)
 
 
