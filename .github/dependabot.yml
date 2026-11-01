@@ -40,12 +40,6 @@ updates:
     labels:
       - dependencies
       - ci
-    # The Go caller is generated. Update ci.workflow_ref in .gds/repository.yaml
-    # and regenerate through gds generate repository --plan/--apply; editing the
-    # output alone breaks its bundle provenance. Other workflow pins remain
-    # visible as Dependabot proposals and retain ordinary review.
-    ignore:
-      - dependency-name: "NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/go-ci.yml"
     groups:
       github-actions:
         applies-to: version-updates

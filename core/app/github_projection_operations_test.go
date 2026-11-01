@@ -69,8 +69,16 @@ func TestGitHubProjectionPlanBindsExactCandidateAndMissingRuntimeBlocksMutation(
 		len(data.Plan.Validate(services.Schemas)) != 0 || githubchange.ValidatePlan(*data.Plan) != nil {
 		t.Fatalf("planned=%#v data=%#v", planned, data)
 	}
+	// The control plane owns its CI workflow, so the candidate carries no
+	// generated caller and the plan needs no workflow-caller operation.
+	lastRequired := "pull-request"
+	for _, file := range local.candidate.Files {
+		if strings.HasPrefix(file.Path, ".github/workflows/") {
+			lastRequired = "workflow-caller"
+		}
+	}
 	if len(data.Plan.Steps) != len(local.candidate.Files)+2 ||
-		data.RequiredOps[0] != "branch" || data.RequiredOps[len(data.RequiredOps)-1] != "workflow-caller" {
+		data.RequiredOps[0] != "branch" || data.RequiredOps[len(data.RequiredOps)-1] != lastRequired {
 		t.Fatalf("steps=%d required=%#v files=%d", len(data.Plan.Steps), data.RequiredOps, len(local.candidate.Files))
 	}
 	for _, step := range data.Plan.Steps[1 : len(data.Plan.Steps)-1] {

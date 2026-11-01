@@ -1,18 +1,6 @@
-# GENERATED FILE - DO NOT EDIT DIRECTLY
-# generator: gds
-# bundle: 0.9.7-dev
-# source-tree-digest: sha256:b934eb311062a580a0badecdc8543643c11b787eafe4f77ff9ef88ab8cd8788e
-# input-digest: sha256:1cc356cfe5495132378a85e7ffb97295b58b7cad6c5044252da65e449f380c77
-# output-digest: sha256:d2dfd9fab3756301dd19c865ddeb9f79f721fff056867c0a3a15e6e72c137951
-# edit-source:
-#   - .gds/repository.yaml
-#   - policies/base/repository-default.yaml
-#   - policies/repositories/github-device-sync.yaml
-#   - policies/roles/public-module.yaml
-#   - policies/stacks/continuous-development.yaml
-#   - templates/agents/repository.md.tmpl
-#   - templates/github-actions/go.yml.tmpl
-#   - templates/harnesses/claude.md.tmpl
+# Repository-owned CI. The anchor declares no ci.workflow_ref, so gds does
+# not generate this file; the commands below are the anchor's
+# verification.commands and must change together with .gds/repository.yaml.
 name: gds-ci
 
 on:
@@ -32,34 +20,59 @@ concurrency:
 jobs:
   fast:
     name: GDS fast
+    runs-on: ubuntu-26.04
+    timeout-minutes: 30
     permissions:
       contents: read
-    uses: NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046
-    with:
-      fetch_depth: 0
-      # Public hosted CI uses GitHub's service cache; the pinned reusable
-      # workflow owns cache keys and invalidation, so no runner-local state is trusted.
-      cache: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: "1.27.3"
+          cache: true
+      - name: Verify Go toolchain
+        run: |
+          actual="$(go env GOVERSION)"
+          [[ "$actual" == go1.27.3 || "$actual" == go1.27.3.* ]]
+      # Declared fast commands own their build scope; the complete build runs
+      # in the PR-required job.
+      - name: Fast checks
+        run: scripts/validate_shell.sh && scripts/validate_go_core.sh --fast
 
-      runner: "ubuntu-latest"
-      go_version: "1.27.3"
-      # Declared fast commands own their build scope; the complete build is below.
-      build_command: ""
-      test_command: "scripts/validate_shell.sh && scripts/validate_go_core.sh --fast"
-      timeout_minutes: 30
   pr-required:
     name: GDS PR required
-    # Run the declared fast checks first. Repositories can keep this phase
-    # inexpensive and reserve their full test/build commands for this job.
+    # The fast checks run first so this job only spends time on code that
+    # already passes them.
     needs: fast
+    runs-on: ubuntu-26.04
+    timeout-minutes: 30
     permissions:
       contents: read
-    uses: NDDev-Technocracy-Archive/ci-workflows-20261014/.github/workflows/go-ci.yml@93eeb2a65e98a29e9dbff7909f67c6419abff046
-    with:
-      fetch_depth: 0
-      cache: true
-      runner: "ubuntu-latest"
-      go_version: "1.27.3"
-      build_command: "go build -trimpath ./core/cmd/gds"
-      test_command: "go test ./... && python3 -m pip install --quiet --require-hashes -r requirements/test.txt && python3 -m pytest"
-      timeout_minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: "1.27.3"
+          cache: true
+      # requirements/test.txt is compiled for Python 3.12 with hashes.
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Build
+        run: go build -trimpath ./core/cmd/gds
+      - name: PR-required tests
+        run: |
+          go test ./...
+          python3 -m pip install --quiet --require-hashes -r requirements/test.txt
+          python3 -m pytest
