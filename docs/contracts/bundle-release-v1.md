@@ -25,7 +25,7 @@ markers, and unexpected executable content fail closed.
 ## Reproducible release unit
 
 `gds-release-builder` requires a fully tracked clean Git worktree, exact source
-ref resolving to `HEAD`, Go `1.27.2`, read-only modules, CGO disabled, portable
+ref resolving to `HEAD`, Go `1.27.3`, read-only modules, CGO disabled, portable
 CPU baselines, and an isolated build environment without ambient credentials or
 Git configuration. Every release requires the exact `refs/tags/gds-v<version>`
 source ref; the release workflow creates that tag before the build runs.
