@@ -26,7 +26,7 @@ jobs:
       actions: read # Read exact completed run and job metadata.
       issues: write # Publish bounded failure evidence in this repository.
     steps:
-      - uses: NDDev-Technocracy-Standarts/std-0004-ci-cd-workflows/.github/actions/feedback@c192c6adcf22088abf456635de614d42e8fa3f8d # nddev-cicd-v0.6.20
+      - uses: NDDev-Technocracy-Standarts/std-0004-ci-cd-workflows/.github/actions/feedback@068c887870bc3cd34ecd69fd762aea3bfd9a4171 # nddev-cicd-v0.6.20
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
